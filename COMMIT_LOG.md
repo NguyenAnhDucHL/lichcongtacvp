@@ -1446,3 +1446,11 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
 - **Tệp thay đổi**:
   - `docker-compose.yml` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "chore(infra): add docker resource limits for backend"`
+
+### [2026-08-20 16:35] Thay đổi icon ứng dụng
+- **Mô tả**: Thay đổi icon tab trình duyệt (favicon) và icon PWA (manifest) thành hình Quốc Huy chuẩn, giữ nguyên banner cũ trên giao diện web.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/index.html` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/public/manifest.json` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/public/assets/quoc_huy.png` (Mới)
+- **Lệnh git commit**: `git commit -m "chore(ui): update favicon and pwa icon to use Quoc Huy"`
