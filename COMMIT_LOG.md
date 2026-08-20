@@ -1454,3 +1454,9 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
   - `LichCongTacVanPhong.Api/ClientApp/public/manifest.json` (Sửa đổi)
   - `LichCongTacVanPhong.Api/ClientApp/public/assets/quoc_huy.png` (Mới)
 - **Lệnh git commit**: `git commit -m "chore(ui): update favicon and pwa icon to use Quoc Huy"`
+
+### [2026-08-20 21:58] Cập nhật giao diện Đăng nhập Quản trị
+- **Mô tả**: Đồng bộ màu xanh lá cây cho Footer trang đăng nhập Admin giống với trang chủ và cập nhật text nút "Quay về xem Lịch công tác văn phòng". Đồng thời vá trực tiếp DB server VNPT (thêm các bảng và cột còn thiếu: Notifications, Holidays, InvitationNumber, ZaloId, RefreshToken...).
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/src/pages/AdminLogin.jsx` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "style(ui): sync AdminLogin UI and patch remote DB schema"`

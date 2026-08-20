@@ -135,7 +135,7 @@ export default function AdminLogin() {
               className="inline-flex items-center justify-center gap-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
             >
               <ArrowLeft size={16} />
-              Quay về xem Lịch công tác
+              Quay về xem Lịch công tác văn phòng
             </Link>
           </div>
         </form>
