@@ -59,31 +59,32 @@ export default function AdminHeader() {
   return (
     <>
       {/* Header */}
-      <div className="max-w-[1000px] mx-auto bg-white relative flex flex-col justify-center min-h-[90px] overflow-hidden">
-        <div className="absolute inset-0 z-0 flex justify-start">
-          <img
-            src="/assets/header-banner.jpg"
-            alt="Lịch Công Tác"
-            className="h-full w-auto max-h-[90px] object-contain"
-            onError={(e) => {
-              e.target.style.display = 'none'
-            }}
-          />
-        </div>
-        <div className="relative z-10 pl-4 md:pl-8 py-2 pr-2">
-          <h1 className="text-[18px] sm:text-[20px] md:text-[26px] font-bold text-[#1d5792] uppercase m-0 leading-tight tracking-wide">
-            LỊCH CÔNG TÁC
-          </h1>
-          <h1 className="text-[13px] sm:text-[15px] md:text-[18px] font-bold text-[#c8102e] uppercase m-0 leading-tight mt-1">
-            VĂN PHÒNG PHƯỜNG CẨM PHẢ
-          </h1>
+      <div className="bg-white">
+        <div className="max-w-[1000px] mx-auto relative flex flex-col justify-center min-h-[90px] overflow-hidden">
+          <div className="absolute inset-0 z-0 flex justify-start">
+            <img
+              src="/assets/header-banner.jpg"
+              alt="Lịch Công Tác"
+              className="h-full w-auto max-h-[90px] object-contain"
+              onError={(e) => {
+                e.target.style.display = 'none'
+              }}
+            />
+          </div>
+          <div className="relative z-10 pl-4 md:pl-8 py-2 pr-2">
+            <h1 className="text-[18px] sm:text-[20px] md:text-[26px] font-bold text-[#1d5792] uppercase m-0 leading-tight tracking-wide">
+              LỊCH CÔNG TÁC
+            </h1>
+            <h1 className="text-[13px] sm:text-[15px] md:text-[18px] font-bold text-[#c8102e] uppercase m-0 leading-tight mt-1">
+              VĂN PHÒNG PHƯỜNG CẨM PHẢ
+            </h1>
+          </div>
         </div>
       </div>
 
       {/* Navigation */}
-      <div className="max-w-[1000px] mx-auto">
-        <nav className="bg-[#4d8b31] relative z-50">
-          <div className="flex flex-col md:flex-row md:items-center">
+      <nav className="bg-[#4d8b31] relative z-50">
+        <div className="max-w-[1000px] mx-auto flex flex-col md:flex-row md:items-center">
           {/* Mobile Menu Toggle */}
           <div
             className="md:hidden flex justify-between items-center px-4 py-3 cursor-pointer"
@@ -156,10 +157,8 @@ export default function AdminHeader() {
               )
             })}
           </div>
-            </div>
-          </div>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </>
   )
 }

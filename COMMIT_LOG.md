@@ -1596,3 +1596,10 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
   - `LichCongTacVanPhong.Api/ClientApp/src/shared/components/PublicLayout.jsx` (Sửa đổi)
   - `LichCongTacVanPhong.Api/ClientApp/src/components/AdminHeader.jsx` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "style(ui): căn chỉnh padding text và đổi sang font-serif cho header giống bản gốc"`
+### [2026-08-20 23:14] Khôi phục thiết kế UI cũ và các trường bị thiếu
+- **Mô tả**: Khôi phục lại thiết kế AdminHeader và PublicLayout theo đúng bản gốc (header tràn viền, text VĂN PHÒNG PHƯỜNG CẨM PHẢ). Đồng thời khôi phục lại các trường 'Người chủ trì' và 'Đơn vị chuẩn bị' trong ScheduleForm.jsx do bị xoá nhầm ở các commit trước.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/src/components/AdminHeader.jsx` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/src/shared/components/PublicLayout.jsx` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/src/features/schedules/components/ScheduleForm.jsx` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "fix(ui): khôi phục thiết kế header tràn viền và các trường nhập liệu trong ScheduleForm"`
