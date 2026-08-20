@@ -1,3 +1,13 @@
+### [2026-08-21 00:43] Sửa hiển thị in đậm toàn bộ cho ô địa điểm
+- **Mô tả**: Theo yêu cầu của người dùng, toàn bộ nội dung trong ô địa điểm (bao gồm cả chữ 'Tại' và tên địa điểm) đều phải được in đậm và hiển thị cùng một màu chữ (màu xanh #005f6b). Đã cập nhật lại thẻ bao ngoài thành `font-bold text-[#005f6b]` và thêm CSS rules `font-weight: inherit !important; color: inherit !important;` vào `globals.css` để ngăn chặn các định dạng cũ từ Rich Text Editor ghi đè lên màu sắc và độ đậm của chữ.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/src/styles/globals.css` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/src/pages/WorkSchedule.jsx` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/src/features/work-schedule/components/SchedulePanels.jsx` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/src/features/schedules/components/ScheduleTable.jsx` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/src/pages/SearchSchedule.jsx` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "style(ui): in đậm và đồng bộ màu chữ cho toàn bộ nội dung phần địa điểm"`
+
 ### [2026-08-21 00:37] Sửa hiển thị in đậm cho chữ 'Tại' trong phần địa điểm
 - **Mô tả**: Theo yêu cầu của người dùng, chữ 'Tại' ở phần địa điểm hiển thị lịch công tác đáng lẽ phải in đậm nhưng hiện tại lại không được in đậm (bị đồng hóa với định dạng của nội dung phía sau). Đã cập nhật lại mã nguồn ở các trang hiển thị lịch (WorkSchedule, AdminSchedules, SearchSchedule) để đóng gói chữ '(Tại' và dấu ')' bằng class `font-bold`, đồng thời loại bỏ font-bold bao trùm cả đoạn để hiển thị chính xác chữ 'Tại' in đậm và phần địa điểm ở phông chữ bình thường.
 - **Tệp thay đổi**:

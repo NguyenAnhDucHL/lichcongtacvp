@@ -73,8 +73,8 @@ export function ScheduleTable({
                         </span>
                       )}
                       {item.location && (
-                        <span className="text-[#005f6b] mr-1">
-                          <span className="font-bold">(Tại</span> {extractTextFromHtml(item.location)}<span className="font-bold">)</span>
+                        <span className="text-[#005f6b] font-bold mr-1">
+                          (Tại {extractTextFromHtml(item.location)})
                         </span>
                       )}
                       <span className="text-gray-800">
