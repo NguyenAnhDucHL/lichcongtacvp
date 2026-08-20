@@ -57,10 +57,9 @@ export default function AdminHeader() {
     'px-6 py-3 border-t border-[#3f7328] md:border-none text-white text-[13px] md:text-xs font-bold uppercase hover:bg-[#3f7328] transition-colors w-full md:w-auto text-left md:text-center block md:inline-block'
 
   return (
-    <>
+    <div className="max-w-[1000px] mx-auto shadow-sm">
       {/* Header */}
-      <div className="bg-white">
-        <div className="max-w-[1000px] mx-auto relative flex flex-col justify-center min-h-[90px] overflow-hidden">
+      <div className="bg-white relative flex flex-col justify-center min-h-[90px] overflow-hidden">
           <div className="absolute inset-0 z-0 flex justify-start">
             <img
               src="/assets/header-banner.jpg"
@@ -84,7 +83,7 @@ export default function AdminHeader() {
 
       {/* Navigation */}
       <nav className="bg-[#4d8b31] relative z-50">
-        <div className="max-w-[1000px] mx-auto flex flex-col md:flex-row md:items-center">
+        <div className="flex flex-col md:flex-row md:items-center">
           {/* Mobile Menu Toggle */}
           <div
             className="md:hidden flex justify-between items-center px-4 py-3 cursor-pointer"
@@ -159,6 +158,6 @@ export default function AdminHeader() {
           </div>
         </div>
       </nav>
-    </>
+    </div>
   )
 }

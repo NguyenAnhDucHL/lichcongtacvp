@@ -31,10 +31,9 @@ export function PublicLayout({ children, activeHref, todayHoliday }) {
     'px-6 py-3 border-t border-[#3f7328] md:border-none text-white text-[13px] md:text-xs font-bold uppercase hover:bg-[#3f7328] transition-colors w-full md:w-auto text-left md:text-center block md:inline-block'
 
   return (
-    <div className="min-h-screen bg-white font-sans text-sm text-gray-800 flex flex-col">
+    <div className="min-h-screen font-sans text-sm text-gray-800 flex flex-col max-w-[1000px] mx-auto shadow-sm">
       {/* Header Image */}
-      <div className="bg-white">
-        <div className="max-w-[1000px] mx-auto relative flex flex-col justify-center min-h-[90px] overflow-hidden">
+      <div className="bg-white relative flex flex-col justify-center min-h-[90px] overflow-hidden">
           <div className="absolute inset-0 z-0 flex justify-start">
             <img
               src="/assets/header-banner.jpg"
@@ -58,7 +57,7 @@ export function PublicLayout({ children, activeHref, todayHoliday }) {
 
       {/* Navigation */}
       <nav className="bg-[#4d8b31] relative z-20">
-        <div className="max-w-[1000px] mx-auto flex flex-col md:flex-row md:items-center">
+        <div className="flex flex-col md:flex-row md:items-center">
           <div
             className="md:hidden flex justify-between items-center px-4 py-3 cursor-pointer"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -89,7 +88,7 @@ export function PublicLayout({ children, activeHref, todayHoliday }) {
       {/* Holiday Marquee */}
       {todayHoliday && (
         <div className="bg-[#fcf8e3] border-b border-[#faebcc]">
-          <div className="max-w-[1000px] mx-auto text-[#c8102e] py-1.5 overflow-hidden whitespace-nowrap relative">
+          <div className="text-[#c8102e] py-1.5 overflow-hidden whitespace-nowrap relative">
             <marquee scrollamount="6" className="text-[13px] font-semibold tracking-wide">
               ⚛ {todayHoliday.content} ⚛
             </marquee>
@@ -104,7 +103,7 @@ export function PublicLayout({ children, activeHref, todayHoliday }) {
 
       {/* Footer */}
       <footer className="bg-[#4d8b31] text-white text-center py-3 text-xs mt-auto">
-        <div className="max-w-[1000px] mx-auto">
+        <div>
           Bản quyền thuộc về UBND phường Cẩm Phả
         </div>
       </footer>
