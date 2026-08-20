@@ -33,9 +33,9 @@ Format chuẩn:
 | Scope | Ý nghĩa |
 |---|---|
 | `auth` | Xác thực, JWT, login/logout |
-| `docs` | Documents — quản lý công văn |
+| `docs` | Quản lý tài liệu |
 | `ocr` | Luồng xử lý OCR + RabbitMQ |
-| `routing` | Luân chuyển công văn |
+| `routing` | Điều hướng hệ thống |
 | `stats` | Dashboard, báo cáo |
 | `users` | Quản lý người dùng |
 | `admin` | Phòng ban, nhãn, luật tự động |

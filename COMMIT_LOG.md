@@ -1410,3 +1410,15 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
 - **Tệp thay đổi**:
   - `LichCongTacVanPhong.Api/ClientApp/src/pages/AdminSchedules.jsx` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "feat(admin): tự động trim Giấy mời số và xóa dòng trống trong Nội dung chi tiết"`
+
+### [2026-08-20 14:16] Cập nhật lại toàn bộ tài liệu Markdown (.md) cho dự án mới
+- **Mô tả**: Sửa đổi nội dung trong các file tài liệu hướng dẫn (README, AGENTS.md, SYSTEM_FEATURES.md, CODE_QUALITY.md và các rule AI) để xóa bỏ các thông tin về "Hệ thống điều phối công văn" cũ và cập nhật thông tin chuẩn xác thành phần mềm "Lịch Công Tác Văn Phòng Phường Cẩm Phả".
+- **Tệp thay đổi**:
+  - `README.md` (Sửa đổi)
+  - `CODE_QUALITY.md` (Sửa đổi)
+  - `SYSTEM_FEATURES.md` (Sửa đổi)
+  - `.agents/AGENTS.md` (Sửa đổi)
+  - `.agents/rules/lc-rule-conventional-commits.md` (Sửa đổi)
+  - `.agents/rules/lc-rule-backend-architecture.md` (Sửa đổi)
+  - `.agents/rules/lc-rule-senior-developer-guidelines.md` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "docs: cập nhật thông tin dự án thành phần mềm Lịch Công Tác Văn Phòng"`

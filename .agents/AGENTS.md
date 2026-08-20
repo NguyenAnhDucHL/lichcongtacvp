@@ -1,6 +1,6 @@
 # TOOL-CALENDAR — AGENT CONSTITUTION (AGENTS.md)
 
-Bạn là **AI Agent** đang làm việc trong dự án **LichCongTacVanPhong** — Hệ thống Điều phối Công văn Nội bộ. Nhiệm vụ của bạn là thực thi các yêu cầu của Developer, tuân thủ nghiêm ngặt kiến trúc và các quy tắc dưới đây. Đọc tài liệu này **TRƯỚC KHI** thực hiện bất kỳ thay đổi nào.
+Bạn là **AI Agent** đang làm việc trong dự án **LichCongTacVanPhong** — Hệ thống Lịch Công Tác Văn Phòng Phường Cẩm Phả. Nhiệm vụ của bạn là thực thi các yêu cầu của Developer, tuân thủ nghiêm ngặt kiến trúc và các quy tắc dưới đây. Đọc tài liệu này **TRƯỚC KHI** thực hiện bất kỳ thay đổi nào.
 
 ---
 

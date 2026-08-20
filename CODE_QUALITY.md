@@ -1,4 +1,4 @@
-# Code Quality & Commit Rules — Hệ thống Điều phối Công văn
+# Code Quality & Commit Rules — Hệ thống Lịch Công Tác Văn Phòng Phường Cẩm Phả
 
 Tài liệu này mô tả toàn bộ quy tắc và tiêu chuẩn chất lượng code được áp dụng trong dự án.
 

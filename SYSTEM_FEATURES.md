@@ -56,7 +56,7 @@ Tất cả API có prefix `/api/`. Đa số yêu cầu Header `Authorization: Be
 ---
 
 ## 5. Kế Hoạch Triển Khai Tính Năng Mới
-Hệ thống hiện tại đã dọn dẹp xong các tính năng Quản lý công văn cũ và đã thiết lập xong cấu trúc CSDL mới.
+Hệ thống hiện tại là phần mềm chuyên biệt về quản lý Lịch Công Tác.
 Các module chuẩn bị phát triển:
 - API Thêm/Sửa/Xóa lịch trong `SchedulesController`.
 - Giao diện Admin quản lý Lịch (`Admin/Schedules.jsx`).

@@ -10,7 +10,7 @@ Quy tắc này tổng hợp 20 năm kinh nghiệm phát triển web và server-s
 ## 2. Quản lý Bộ nhớ & Tối ưu Backend (C# & DB)
 - **Tuyệt đối không rò rỉ kết nối DB (Connection Leaks)**: Khi dùng ADO.NET, **BẮT BUỘC** phải bọc `SqliteConnection`, `SqliteCommand`, `SqliteDataReader` trong khối `using`. Quên điều này sẽ làm server sập sau vài ngày do cạn kiệt Connection Pool.
 - **Tránh tải dữ liệu hàng loạt không kiểm soát (OOM - Out of Memory)**: Không bao giờ trả về toàn bộ dữ liệu bảng (VD: `.ToList()` toàn bộ user, toàn bộ log). Phải luôn phân trang (Pagination) hoặc giới hạn số dòng (LIMIT/TOP).
-- **Phòng chống N+1 Queries**: Khi load một danh sách (Ví dụ: danh sách công văn), cấm chạy vòng lặp for/foreach để query chi tiết từng dòng. Phải dùng `JOIN` hoặc query gộp ngay từ DB.
+- **Phòng chống N+1 Queries**: Khi load một danh sách (Ví dụ: danh sách lịch công tác), cấm chạy vòng lặp for/foreach để query chi tiết từng dòng. Phải dùng `JOIN` hoặc query gộp ngay từ DB.
 - **Bắt mọi ngoại lệ (Global Exception Handling)**: Không bao giờ để lỗi chưa bắt (Unhandled Exception) rò rỉ ra ngoài API, dẫn đến API crash. Phải có Global Middleware để luôn trả về `ApiResponse<T>.Fail()`.
 
 ## 3. Quản lý Vòng đời & UX Frontend (React/JS)

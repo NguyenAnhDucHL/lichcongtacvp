@@ -1,10 +1,10 @@
-# 📄 Hệ Thống Điều Phối Công Văn (Link Strategy - GD1)
+# 📄 Hệ Thống Lịch Công Tác Văn Phòng Phường Cẩm Phả
 
-Hệ thống quản lý, giám sát và điều phối công văn thời gian thực dành cho cơ quan hành chính. Tích hợp AI OCR và bảo mật đa tầng.
+Hệ thống quản lý, giám sát lịch công tác thời gian thực dành cho cơ quan hành chính.
 
 ## 🌟 Tính năng chính (Giai đoạn 1)
 
-- **Dashboard thông minh**: Giám sát tiến độ công văn 7-3-1 ngày với biểu đồ tương tác.
+- **Dashboard thông minh**: Giám sát lịch công tác và sự kiện với biểu đồ tương tác.
 - **AI OCR (Industrial Edition)**: Tự động bóc tách thông tin văn bản (Số hiệu, Ngày tháng, Trích yếu...) với độ chính xác cao.
 - **Quản lý Nhân sự (CRUD)**: Quản lý chi tiết hồ sơ cán bộ bao gồm Họ tên, Email, Số điện thoại và sơ đồ Phòng ban.
 - **Bảo mật RBAC**: Phân quyền chặt chẽ 4 vai trò (Admin, Lãnh đạo, Văn thư, Cán bộ).
@@ -116,7 +116,7 @@ Hệ thống được nạp sẵn dữ liệu mẫu (Seed Data) trong file `seed
 ## 📈 Quy trình làm việc
 
 1. **Văn thư**: Đăng nhập -> Tải hồ sơ (PDF) -> Hệ thống tự động OCR -> Kiểm tra & Lưu thông tin -> Giao việc cho Cán bộ.
-2. **Lãnh đạo**: Theo dõi Dashboard, giám sát dòng chảy công văn và các cảnh báo quá hạn.
+2. **Lãnh đạo**: Theo dõi Dashboard, giám sát lịch công tác và các sự kiện quan trọng.
 3. **Cán bộ**: Nhận thông báo (Push/SignalR) -> Xử lý văn bản được giao -> Nộp bằng chứng hoàn thành.
 4. **Admin**: Quản trị nhân sự, phòng ban, nhãn văn bản và các luật tự động của hệ thống.
 
