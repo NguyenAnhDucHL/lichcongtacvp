@@ -375,7 +375,7 @@ export default function WorkSchedule() {
                 </div>
               )}
             </div>
-            
+
             {/* Mobile Divider */}
             <div className="md:hidden px-4 mb-4">
               <hr className="border-gray-200" />

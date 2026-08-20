@@ -1,3 +1,9 @@
+### [2026-08-21 01:48] Sửa lỗi text đè lên logo banner trên mobile
+- **Mô tả**: Tăng padding left (từ 90px lên 100px) cho text header trong `AdminHeader.jsx` và `PublicLayout.jsx` trên mobile để tránh việc text bị sát và đè lên hình tròn của logo banner bên trái.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/src/components/AdminHeader.jsx` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/src/shared/components/PublicLayout.jsx` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "style(ui): increase left padding on mobile header to prevent text overlapping logo"`
 ### [2026-08-21 01:40] Sửa lỗi viền trắng trên AdminHeader khi dùng mobile
 - **Mô tả**: Thay class `border-white` bằng `md:border-white` trong `AdminHeader.jsx` để tránh việc mục menu đang active bị viền trắng chen ngang trên giao diện điện thoại.
 - **Tệp thay đổi**:

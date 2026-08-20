@@ -1,4 +1,13 @@
 #!/bin/bash
-source /Users/macbookpro/Documents/lichcongtacvp/.deploy.env
-export SSHPASS=$VNPT_PASS
-sshpass -e ssh -o StrictHostKeyChecking=no $VNPT_USER@$VNPT_HOST "cd /root/lichcongtacvp && docker rm -f a07283fa01e90a4b299f042b59f42e4f03aa27835875aebff0b38b4da91dff53 && docker compose -p lichcongtacvp up -d --build"
+source .deploy.env
+expect << EXP
+set timeout -1
+spawn ssh -o StrictHostKeyChecking=no $VNPT_USER@$VNPT_HOST "docker ps -a -q --filter ancestor=lichcongtacvp-lichcongtac-backend | xargs -r docker rm -f; docker ps -a -q --filter name=lichcongtacvp-backend | xargs -r docker rm -f; cd /root/lichcongtacvp && docker compose -p lichcongtacvp up -d"
+expect {
+    "password:" {
+        send "$VNPT_PASS\r"
+        exp_continue
+    }
+    eof
+}
+EXP
