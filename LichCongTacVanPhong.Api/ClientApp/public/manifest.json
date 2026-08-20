@@ -7,8 +7,8 @@
   "theme_color": "#1d5792",
   "icons": [
     {
-      "src": "/assets/logo.png",
-      "sizes": "192x192",
+      "src": "/assets/quoc_huy.png",
+      "sizes": "192x192 512x512",
       "type": "image/png"
     }
   ]
