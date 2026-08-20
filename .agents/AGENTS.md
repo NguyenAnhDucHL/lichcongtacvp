@@ -25,7 +25,7 @@ Bạn là **AI Agent** đang làm việc trong dự án **LichCongTacVanPhong** 
 | **Database** | SQLite + ADO.NET | **KHÔNG Entity Framework**, dùng `SqliteDataReader` |
 | **Frontend** | React 19 + Vite + Tailwind CSS v4 + shadcn/ui | `fetch` API, không Axios |
 | **Auth** | JWT Bearer Token | Header `Authorization: Bearer <token>` |
-| **Queue/Realtime** | RabbitMQ + SignalR | Background jobs & realtime notify |
+| **Queue/Realtime** | SignalR | Realtime notify |
 | **Security** | ClamAV, BCrypt/PBKDF2, Nginx | Rate limiting: 5 req/phút cho auth |
 | **Containerization** | Docker + docker-compose | File DB mount tại `/app/data/` |
 

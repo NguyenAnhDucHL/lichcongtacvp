@@ -20,7 +20,6 @@ Quy tắc này bảo vệ toàn bộ secrets, credentials và dependency surface
 - File `.env`, `.env.local`, `.env.production`
 - Private certificate (`.pem`, `.p12`, `.pfx`, `.key`)
 - ClamAV socket path production
-- RabbitMQ credentials thật
 
 **Thay vào đó, dùng:**
 ```bash
@@ -41,7 +40,6 @@ File `.env.example` phải có trong repo để hướng dẫn, nhưng chỉ ch�
 ```env
 JWT_SECRET=your_jwt_secret_here
 DB_PATH=/app/data/documents.db
-RABBITMQ_URL=amqp://user:password@rabbitmq:5672
 CLAMAV_HOST=localhost
 ```
 

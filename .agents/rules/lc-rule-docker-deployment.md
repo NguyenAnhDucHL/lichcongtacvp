@@ -20,7 +20,7 @@ AI Agent **TUYỆT ĐỐI TUÂN THỦ** các quy định sau khi viết script d
    Nên dùng cú pháp `docker compose` thay vì phiên bản cũ `docker-compose`.
 
 3. **Bảo vệ Vùng Cấm Trên Server**:
-   Dự án Lịch Công Tác Văn Phòng (`/root/lichcongtacvp`) chỉ là một dịch vụ thành phần trên server. **Tuyệt đối không** thao tác (restart, stop, rm) vào các container độc lập khác trên server như `nginx-proxy`, `doc-coordination-system`, `doc-clamav`, `rabbitmq`.
+   Dự án Lịch Công Tác Văn Phòng (`/root/lichcongtacvp`) chỉ là một dịch vụ thành phần trên server. **Tuyệt đối không** thao tác (restart, stop, rm) vào các container độc lập khác trên server như `nginx-proxy`, `doc-coordination-system`, `doc-clamav`.
 
 ---
 **Status:** ACTIVE  

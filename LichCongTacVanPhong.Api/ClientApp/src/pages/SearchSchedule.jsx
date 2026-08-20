@@ -59,7 +59,7 @@ export default function SearchSchedule() {
     scheduleService
       .getTodayHoliday()
       .then((data) => setTodayHoliday(data?.content ? data : data?.data || null))
-      .catch(() => {})
+      .catch(() => { })
   }, [lastHolidayUpdate])
 
   const fetchResults = async (page) => {

@@ -2,18 +2,6 @@
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS base
 WORKDIR /app
 
-# Install native dependencies for PaddleOCR and SkiaSharp
-RUN apt-get update && apt-get install -y \
-    libgdiplus \
-    libc6-dev \
-    libgomp1 \
-    libgl1 \
-    libglib2.0-0 \
-    libsm6 \
-    libxext6 \
-    libxrender-dev \
-    && rm -rf /var/lib/apt/lists/*
-
 
 # Stage 2: Frontend Build
 FROM node:22-alpine AS client-build

@@ -96,7 +96,7 @@ Format bắt buộc:
 
 **Ví dụ HỢP LỆ:**
 ```
-feat(upload): thêm hỗ trợ quét OCR nhiều trang
+feat(upload): thêm hỗ trợ đính kèm nhiều file PDF
 fix(auth): sửa lỗi khóa tài khoản khi đổi mật khẩu
 docs: cập nhật SYSTEM_FEATURES.md thêm mô tả Chat
 ```

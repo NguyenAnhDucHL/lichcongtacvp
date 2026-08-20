@@ -27,7 +27,7 @@ docker-compose up --build -d
 
 # Xem logs realtime
 docker-compose logs -f api
-docker-compose logs -f rabbitmq
+docker-compose logs -f lichcongtac-backend
 
 # Dừng và xóa containers
 docker-compose down
@@ -85,7 +85,6 @@ CLAMAV_HOST=clamav
 |---|---|---|
 | Nginx | `80` | Entry point chính |
 | ASP.NET Core | `5000` (internal) | Backend API |
-| RabbitMQ Management | `15672` | Admin UI |
 
 ---
 **Status:** ACTIVE  

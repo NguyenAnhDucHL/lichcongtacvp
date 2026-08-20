@@ -1513,3 +1513,22 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
 - **Tệp thay đổi**:
   - `.github/workflows/deploy.yml` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "chore(infra): đồng bộ thông tin deploy trong Github Actions thành lichcongtacvp"`
+
+### [2026-08-20 22:36] Dọn dẹp tàn dư dự án cũ (OCR, RabbitMQ, PaddleOCR)
+- **Mô tả**: Quét toàn bộ dự án và xóa bỏ mọi cấu hình, script, comment liên quan đến các tính năng của dự án cũ (Lịch Công Tác Ủy ban).
+  - Loại bỏ các gói cài đặt `PaddleOCR` và `SkiaSharp` thừa khỏi `Dockerfile`.
+  - Xóa biến `OcrSettings` trong `appsettings.json`.
+  - Bỏ hằng số `LOI_OCR` tại `constants.js`.
+  - Xóa nhắc nhở về `RabbitMQ` tại `AGENTS.md`, `lc-rule-docker-deployment.md`, `lc-rule-secret-management.md`, và `lc-skill-docker-setup`.
+  - Sửa comment example trong `CODE_QUALITY.md` tránh nhắc tới OCR.
+- **Tệp thay đổi**:
+  - `Dockerfile` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/appsettings.json` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/appsettings.Development.json` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/src/lib/constants.js` (Sửa đổi)
+  - `.agents/AGENTS.md` (Sửa đổi)
+  - `.agents/rules/lc-rule-docker-deployment.md` (Sửa đổi)
+  - `.agents/rules/lc-rule-secret-management.md` (Sửa đổi)
+  - `.agents/skills/lc-skill-docker-setup/SKILL.md` (Sửa đổi)
+  - `CODE_QUALITY.md` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "chore(cleanup): dọn dẹp triệt để các thiết lập OCR và RabbitMQ thừa từ dự án cũ"`
