@@ -246,64 +246,60 @@ export default function SearchSchedule() {
                 </select>
               </div>
             </div>
-            <div className="w-full">
-              <table className="w-full border-collapse border-t border-gray-300 text-[15px] block md:table">
-                <thead className="hidden md:table-header-group">
+            <div className="w-full overflow-x-hidden">
+              <table className="w-full border-collapse border-t border-gray-300 text-[15px]">
+                <thead>
                   <tr className="bg-[#fce8d5]">
-                    <th className="border border-gray-300 py-2 px-3 font-bold w-12 text-center">
+                    <th className="border border-gray-300 py-2 px-2 md:px-3 font-bold w-10 md:w-12 text-center text-sm md:text-base">
                       STT
                     </th>
-                    <th className="border border-gray-300 py-2 px-3 font-bold w-28 text-center">
+                    <th className="border border-gray-300 py-2 px-2 md:px-3 font-bold w-20 md:w-28 text-center text-sm md:text-base">
                       Ngày
                     </th>
-                    <th className="border border-gray-300 py-2 px-3 font-bold text-center">
+                    <th className="border border-gray-300 py-2 px-2 md:px-3 font-bold text-center text-sm md:text-base">
                       Nội dung
                     </th>
-                    <th className="border border-gray-300 py-2 px-3 font-bold w-28 text-center">
+                    <th className="border border-gray-300 py-2 px-2 md:px-3 font-bold w-20 md:w-28 text-center text-sm md:text-base">
                       Phòng, ban
                     </th>
                   </tr>
                 </thead>
-                <tbody className="block md:table-row-group">
+                <tbody>
                   {paginated.length > 0 ? (
                     paginated.map((item, index) => {
                       const di = formatDateDisplay(item.date)
                       return (
-                        <tr key={item.id} className="block md:table-row border border-gray-300 mb-4 md:mb-0 hover:bg-gray-50 bg-white">
-                          <td className="block md:table-cell border-b md:border-gray-300 py-2.5 px-3 text-left md:text-center">
-                            <span className="inline-block w-24 font-bold md:hidden text-gray-600">STT:</span>
+                        <tr key={item.id} className="border border-gray-300 hover:bg-gray-50 bg-white">
+                          <td className="border-b border-gray-300 py-2.5 px-2 md:px-3 text-center text-sm md:text-base">
                             <span className="font-bold">{(currentPage - 1) * pageSize + index + 1}</span>
                           </td>
-                          <td className="block md:table-cell border-b md:border-gray-300 py-2.5 px-3 text-left md:text-center leading-tight">
-                            <span className="inline-block w-24 font-bold md:hidden text-gray-600">Ngày:</span>
-                            <span className="inline-block md:block">{di.dayName}</span>
-                            <span className="inline-block md:block text-[#1d5792] font-bold ml-1 md:ml-0">{di.date}</span>
+                          <td className="border-b border-gray-300 py-2.5 px-2 md:px-3 text-center leading-tight text-sm md:text-base">
+                            <span className="block">{di.dayName}</span>
+                            <span className="block text-[#1d5792] font-bold">{di.date}</span>
                           </td>
-                          <td className="block md:table-cell border-b md:border-gray-300 py-2.5 px-3">
-                            <span className="inline-block w-24 font-bold md:hidden text-gray-600 align-top">Nội dung:</span>
-                            <div className="inline-block w-full md:w-auto">
-                            {item.startTime?.trim() && (
-                              <span className="text-[#c8102e] font-bold mr-2">
-                                {item.startTime.trim()}:
-                              </span>
-                            )}
-                            {item.invitationNumber && (
-                              <span className="text-[#005f6b] font-bold mr-1">
-                                {item.invitationNumber}
-                              </span>
-                            )}
-                            {item.location && (
-                              <span className="text-[#005f6b] font-bold mr-1">
-                                (Tại {extractText(item.location)})
-                              </span>
-                            )}
-                            {item.content && (
-                              <span className="text-gray-900">{extractText(item.content)}</span>
-                            )}
+                          <td className="border-b border-gray-300 py-2.5 px-2 md:px-3 text-sm md:text-base">
+                            <div className="w-full">
+                              {item.startTime?.trim() && (
+                                <span className="text-[#c8102e] font-bold mr-2">
+                                  {item.startTime.trim()}:
+                                </span>
+                              )}
+                              {item.invitationNumber && (
+                                <span className="text-[#005f6b] font-bold mr-1">
+                                  {item.invitationNumber}
+                                </span>
+                              )}
+                              {item.location && (
+                                <span className="text-[#005f6b] font-bold mr-1">
+                                  (Tại {extractText(item.location)})
+                                </span>
+                              )}
+                              {item.content && (
+                                <span className="text-gray-900">{extractText(item.content)}</span>
+                              )}
                             </div>
                           </td>
-                          <td className="block md:table-cell py-2.5 px-3 text-left md:text-center">
-                            <span className="inline-block w-24 font-bold md:hidden text-gray-600">Phòng ban:</span>
+                          <td className="border-b border-gray-300 py-2.5 px-2 md:px-3 text-center text-sm md:text-base">
                             {extractText(item.preparingUnit) || 'CƠ QUAN'}
                           </td>
                         </tr>
