@@ -1,3 +1,8 @@
+### [2026-08-21 00:54] Tăng kích thước chữ trang chủ hiển thị lịch
+- **Mô tả**: Tăng kích thước chữ cho các mục lịch công tác từ 18px lên 20px, đồng thời loại bỏ giới hạn của `prose-sm` (14px) đối với nội dung chi tiết, giúp văn bản to và rõ ràng như phiên bản cũ.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/src/features/work-schedule/components/SchedulePanels.jsx` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "style(ui): increase font size for schedule items to match old design"`
 ### [2026-08-21 00:47] Thêm tuỳ chọn số dòng hiển thị trên trang tìm kiếm
 - **Mô tả**: Bổ sung dropdown cho phép người dùng chọn số dòng hiển thị (10, 20, 50) trên trang Tìm kiếm lịch công tác công khai (SearchSchedule), tương tự như trang Admin.
 - **Tệp thay đổi**:

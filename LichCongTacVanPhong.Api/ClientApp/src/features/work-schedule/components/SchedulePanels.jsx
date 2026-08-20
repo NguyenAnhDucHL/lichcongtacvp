@@ -16,11 +16,11 @@ export function ScheduleItem({ item }) {
   return (
     <div className="flex gap-2">
       {item.startTime && item.startTime.trim() !== '' && (
-        <span className="text-[#c8102e] shrink-0 font-bold font-['Times_New_Roman',_Times,_serif] text-[18px]">
+        <span className="text-[#c8102e] shrink-0 font-bold font-['Times_New_Roman',_Times,_serif] text-[20px]">
           {item.startTime.trim()}:
         </span>
       )}
-      <div className="font-medium font-['Times_New_Roman',_Times,_serif] text-[18px] leading-relaxed w-full text-justify">
+      <div className="font-medium font-['Times_New_Roman',_Times,_serif] text-[20px] leading-relaxed w-full text-justify">
         <span>
           {item.invitationNumber && (
             <span className="text-[#005f6b] font-bold mr-1">{item.invitationNumber}</span>
@@ -38,7 +38,7 @@ export function ScheduleItem({ item }) {
         </span>
         {item.content && (
           <div
-            className="text-gray-900 prose dark:prose-invert prose-sm max-w-none"
+            className="text-gray-900 mt-1 [&_p]:mb-1 [&_ul]:list-disc [&_ul]:ml-5"
             dangerouslySetInnerHTML={{ __html: item.content }}
           />
         )}
@@ -56,7 +56,7 @@ export function TodayPanel({ displayToday, notifications }) {
   return (
     <div className="flex flex-col h-full md:col-span-3 px-4 pt-5">
       <div className="mb-4">
-        <h3 className="text-[18px] md:text-2xl font-bold text-[#1d5792] text-center mb-5">
+        <h3 className="text-[20px] md:text-2xl font-bold text-[#1d5792] text-center mb-5">
           {displayToday.dayLabel}: ngày {displayToday.date}
         </h3>
 
@@ -74,7 +74,7 @@ export function TodayPanel({ displayToday, notifications }) {
       {notifications.length > 0 && (
         <div className="mb-6 px-4 md:px-0">
           <div className="bg-[#f8f9fa] border-l-4 border-[#1d5792] p-4 rounded shadow-sm">
-            <h4 className="text-[#1d5792] font-bold text-[17px] flex items-center gap-2 mb-3 uppercase tracking-wide">
+            <h4 className="text-[#1d5792] font-bold text-[18px] flex items-center gap-2 mb-3 uppercase tracking-wide">
               <Bell className="w-5 h-5 text-[#c8102e] animate-pulse" />
               Thông báo
             </h4>
@@ -82,10 +82,10 @@ export function TodayPanel({ displayToday, notifications }) {
               {notifications.map((notif, idx) => (
                 <div
                   key={notif.id || idx}
-                  className="text-gray-800 text-[16px] leading-relaxed text-justify break-words content-render border-b border-gray-200 last:border-0 pb-3 last:pb-0"
+                  className="text-gray-800 text-[18px] leading-relaxed text-justify break-words content-render border-b border-gray-200 last:border-0 pb-3 last:pb-0 font-['Times_New_Roman',_Times,_serif]"
                 >
                   <div
-                    className="prose dark:prose-invert max-w-none prose-sm"
+                    className="mt-1 [&_p]:mb-1 [&_ul]:list-disc [&_ul]:ml-5"
                     dangerouslySetInnerHTML={{ __html: notif.content }}
                   />
                 </div>
@@ -107,7 +107,7 @@ export function UpcomingPanel({ upcomingSchedules }) {
       {upcomingSchedules.length > 0 ? (
         upcomingSchedules.map((day, dayIdx) => (
           <div key={dayIdx} className="mb-8">
-            <h3 className="text-[18px] md:text-[19px] font-bold text-[#1d5792] mb-4 text-center">
+            <h3 className="text-[20px] md:text-[21px] font-bold text-[#1d5792] mb-4 text-center">
               {day.dayLabel}, ngày {day.date}:
             </h3>
             <div className="space-y-3">
