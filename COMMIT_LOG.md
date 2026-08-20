@@ -1466,3 +1466,13 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
 - **Tệp thay đổi**:
   - `docker-compose.yml` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "fix(infra): correct resource limit syntax in docker-compose.yml"`
+
+### [2026-08-20 22:15] Cấu trúc lại thư mục kỹ năng AI (Skills)
+- **Mô tả**: Tái cấu trúc các tệp tin kỹ năng (`.md`) trong `.agents/skills` thành các thư mục riêng biệt chứa file `SKILL.md` và bổ sung trường `name` vào YAML frontmatter để hệ thống Antigravity có thể tự động nhận dạng và nạp kỹ năng chính xác.
+- **Tệp thay đổi**:
+  - `lc-skill-api-testing.md` -> `lc-skill-api-testing/SKILL.md` (Mới / Xóa)
+  - `lc-skill-code-review.md` -> `lc-skill-code-review/SKILL.md` (Mới / Xóa)
+  - `lc-skill-db-migration.md` -> `lc-skill-db-migration/SKILL.md` (Mới / Xóa)
+  - `lc-skill-docker-setup.md` -> `lc-skill-docker-setup/SKILL.md` (Mới / Xóa)
+  - `lc-skill-ocr-debug.md` -> `lc-skill-ocr-debug/SKILL.md` (Mới / Xóa)
+- **Lệnh git commit**: `git commit -m "chore(docs): restructure AI agent skills directories and update YAML frontmatter"`

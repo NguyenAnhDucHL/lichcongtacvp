@@ -1,5 +1,5 @@
 ---
-trigger: on_demand
+name: lc-skill-docker-setup
 description: "Kỹ năng setup Docker và debug môi trường development."
 ---
 

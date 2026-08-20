@@ -1,5 +1,5 @@
 ---
-trigger: on_demand
+name: lc-skill-ocr-debug
 description: "Kỹ năng debug luồng OCR — RabbitMQ, PaddleOCR, SignalR pipeline."
 ---
 
