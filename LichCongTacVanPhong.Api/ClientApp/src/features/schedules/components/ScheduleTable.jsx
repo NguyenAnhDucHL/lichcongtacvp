@@ -86,6 +86,7 @@ export function ScheduleTable({
                       <span className="text-gray-800">
                         {item.content && ` ${extractTextFromHtml(item.content)} `}
                       </span>
+                    </span>
                     </div>
                   </td>
                   <td className="block md:table-cell border-b md:border-gray-200 py-2.5 px-4 text-left md:text-center">
