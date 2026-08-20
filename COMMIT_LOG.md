@@ -1574,3 +1574,9 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
 - **Tệp thay đổi**:
   - `LichCongTacVanPhong.Api/ClientApp/src/shared/components/PublicLayout.jsx` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "style(ui): đổi màu navbar PublicLayout sang xanh dương đồng bộ admin"`
+
+### [2026-08-20 22:58] Sửa lại màu navbar PublicLayout theo chuẩn Admin
+- **Mô tả**: Sửa lại lỗi đổi nhầm màu navbar trang Public (thành xanh dương) bằng màu xanh lá cây đậm (`#4d8b31`) giống y hệt như trang Quản trị (AdminHeader).
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/src/shared/components/PublicLayout.jsx` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "fix(ui): sửa lại màu navbar PublicLayout về màu xanh lá đồng bộ với Admin"`
