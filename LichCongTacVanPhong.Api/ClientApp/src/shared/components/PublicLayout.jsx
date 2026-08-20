@@ -2,7 +2,7 @@ import { Outlet, Link, useLocation } from 'react-router-dom'
 import { Menu } from 'lucide-react'
 import { useState } from 'react'
 
-export default function PublicLayout() {
+export function PublicLayout() {
   const location = useLocation()
   const currentPath = location.pathname
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
