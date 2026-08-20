@@ -5,7 +5,7 @@ Hệ thống quản lý, giám sát lịch công tác thời gian thực dành c
 ## 🌟 Tính năng chính (Giai đoạn 1)
 
 - **Dashboard thông minh**: Giám sát lịch công tác và sự kiện với biểu đồ tương tác.
-- **AI OCR (Industrial Edition)**: Tự động bóc tách thông tin văn bản (Số hiệu, Ngày tháng, Trích yếu...) với độ chính xác cao.
+- **Quản lý đa nền tảng**: Responsive hỗ trợ xem lịch công tác tốt trên cả điện thoại di động, máy tính bảng và màn hình lớn.
 - **Quản lý Nhân sự (CRUD)**: Quản lý chi tiết hồ sơ cán bộ bao gồm Họ tên, Email, Số điện thoại và sơ đồ Phòng ban.
 - **Bảo mật RBAC**: Phân quyền chặt chẽ 4 vai trò (Admin, Lãnh đạo, Văn thư, Cán bộ).
 - **Bảo mật HTTPS**: Tích hợp sẵn chứng chỉ SSL mẫu cho Nginx, đảm bảo an toàn dữ liệu truyền tải.
@@ -115,10 +115,10 @@ Hệ thống được nạp sẵn dữ liệu mẫu (Seed Data) trong file `seed
 
 ## 📈 Quy trình làm việc
 
-1. **Văn thư**: Đăng nhập -> Tải hồ sơ (PDF) -> Hệ thống tự động OCR -> Kiểm tra & Lưu thông tin -> Giao việc cho Cán bộ.
+1. **Văn thư**: Cập nhật, tạo mới và quản lý các lịch công tác, sự kiện của cơ quan.
 2. **Lãnh đạo**: Theo dõi Dashboard, giám sát lịch công tác và các sự kiện quan trọng.
-3. **Cán bộ**: Nhận thông báo (Push/SignalR) -> Xử lý văn bản được giao -> Nộp bằng chứng hoàn thành.
-4. **Admin**: Quản trị nhân sự, phòng ban, nhãn văn bản và các luật tự động của hệ thống.
+3. **Cán bộ**: Xem lịch công tác cá nhân/cơ quan, nhận thông báo (Push/SignalR) khi có sự kiện mới hoặc thay đổi lịch.
+4. **Admin**: Quản trị nhân sự, phòng ban và các cấu hình phân quyền của hệ thống.
 
 ---
 
@@ -126,7 +126,7 @@ Hệ thống được nạp sẵn dữ liệu mẫu (Seed Data) trong file `seed
 
 Hệ thống đã được gia cố (hardened) để đạt tiêu chuẩn vận hành thực tế:
 
-- **Database Concurrency (WAL Mode):** Cho phép bóc tách OCR và truy vấn Dashboard diễn ra song song mà không gây khóa cơ sở dữ liệu.
+- **Database Concurrency (WAL Mode):** Cho phép người dân tra cứu lịch công tác và cán bộ cập nhật dữ liệu diễn ra song song mượt mà mà không gây khóa cơ sở dữ liệu.
 - **Silent Re-subscription:** Tự động sửa lỗi và đăng ký lại thông báo đẩy ngầm khi phát hiện thay đổi cấu hình máy chủ.
 - **Rate Limiting:** Bảo vệ API khỏi các cuộc tấn công spam và quá tải (Giới hạn 50 req/10s).
 - **Health Check Banner:** Cảnh báo trực quan ngay trên giao diện nếu trình duyệt đang chặn quyền thông báo.

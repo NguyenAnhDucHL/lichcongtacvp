@@ -1422,3 +1422,9 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
   - `.agents/rules/lc-rule-backend-architecture.md` (Sửa đổi)
   - `.agents/rules/lc-rule-senior-developer-guidelines.md` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "docs: cập nhật thông tin dự án thành phần mềm Lịch Công Tác Văn Phòng"`
+
+### [2026-08-20 14:30] Xóa các thông tin tàn dư của OCR và Quản lý Công văn trong README
+- **Mô tả**: Phát hiện ra phần "Quy trình làm việc" và "Tính năng Hardening" trong `README.md` vẫn còn chứa các đoạn văn miêu tả về "Hệ thống tự động OCR", "Xử lý văn bản", "bóc tách OCR". Đã cập nhật lại toàn bộ cho phù hợp với nghiệp vụ Lịch Công Tác Văn Phòng.
+- **Tệp thay đổi**:
+  - `README.md` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "docs: remove leftover OCR and Document descriptions in README"`
