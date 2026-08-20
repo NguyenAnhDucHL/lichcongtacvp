@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="LichCongTacVanPhong.Api/LichCongTacVanPhong.Api.csproj" />
+  <Project Path="LichCongTacVanPhong.Core/LichCongTacVanPhong.Core.csproj" />
+  <Project Path="LichCongTacVanPhong.Tests/LichCongTacVanPhong.Tests.csproj" />
+</Solution>

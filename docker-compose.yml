@@ -1,0 +1,27 @@
+version: "3.3"
+services:
+  lichcongtac-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lichcongtac-backend
+    expose:
+      - "5000"
+    ports:
+      - "59608:5000"
+    security_opt:
+      - no-new-privileges:true
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+      - DB_PATH=${DB_PATH}
+      - TZ=${TZ}
+      - JWT_SECRET=${JWT_SECRET}
+      - PUBLIC_ID_SECRET=${PUBLIC_ID_SECRET}
+    volumes:
+      - ./data_dump:/app/data
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    restart: always
