@@ -1,14 +1,14 @@
-import { Outlet, Link, useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Menu } from 'lucide-react'
 import { useState } from 'react'
 
-export function PublicLayout() {
+export function PublicLayout({ children, activeHref, todayHoliday }) {
   const location = useLocation()
   const currentPath = location.pathname
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const isActive = (href) => {
-    return currentPath === href || currentPath === href + '/'
+    return activeHref === href || currentPath === href || currentPath === href + '/'
   }
 
   const navItems = [
@@ -74,9 +74,15 @@ export function PublicLayout() {
         </div>
       </nav>
 
+      {todayHoliday && (
+        <div className="bg-red-100 text-red-800 px-4 py-2 text-center text-sm font-medium">
+          Hôm nay: {todayHoliday.content}
+        </div>
+      )}
+
       <main className="flex-1 w-full bg-transparent p-0 mt-4">
         <div className="max-w-[1000px] mx-auto min-h-[500px] px-2 sm:px-4 md:px-0">
-          <Outlet />
+          {children}
         </div>
       </main>
 
