@@ -1586,3 +1586,13 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
 - **Tệp thay đổi**:
   - `LichCongTacVanPhong.Api/ClientApp/src/components/AdminHeader.jsx` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "style(ui): giới hạn chiều rộng navbar AdminHeader không tràn màn hình"`
+
+### [2026-08-20 23:05] Căn chỉnh Header và font chữ chuẩn theo bản gốc
+- **Mô tả**: Sửa lại giao diện Header để giống hệt 100% với phiên bản đang chạy:
+  - Thay đổi menu "TRANG CHỦ" thành "HOME".
+  - Chuyển font chữ của menu sang kiểu có chân (`font-serif`) cho giống hệt bản cũ.
+  - Sửa lại padding text (`pl-[130px]` -> `pl-8`) để text nằm bên trái logo Trống đồng, không bị đè lên logo nữa.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/src/shared/components/PublicLayout.jsx` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/src/components/AdminHeader.jsx` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "style(ui): căn chỉnh padding text và đổi sang font-serif cho header giống bản gốc"`

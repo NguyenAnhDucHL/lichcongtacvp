@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Menu } from 'lucide-react'
 
 const PUBLIC_NAV = [
-  { label: 'TRANG CHỦ', href: '/campha/' },
+  { label: 'HOME', href: '/campha/' },
   {
     label: 'QUẢN LÝ VĂN BẢN ĐIỀU HÀNH',
     href: 'https://congchuc.quangninh.gov.vn/sso/Login.aspx',
@@ -40,8 +40,8 @@ export function PublicLayout({ children, activeHref, todayHoliday }) {
             }}
           />
         </div>
-        <div className="relative z-10 pl-[90px] md:pl-[130px] py-2 pr-2">
-          <h1 className="text-[18px] sm:text-[20px] md:text-[24px] font-bold text-[#1d5792] uppercase m-0 leading-tight tracking-wide">
+        <div className="relative z-10 pl-4 md:pl-8 py-2 pr-2">
+          <h1 className="text-[18px] sm:text-[20px] md:text-[26px] font-bold text-[#1d5792] uppercase m-0 leading-tight tracking-wide">
             LỊCH CÔNG TÁC
           </h1>
           <h1 className="text-[13px] sm:text-[15px] md:text-[18px] font-bold text-[#c8102e] uppercase m-0 leading-tight tracking-wide mt-1">
@@ -72,7 +72,7 @@ export function PublicLayout({ children, activeHref, todayHoliday }) {
                   href={item.href}
                   target={item.target || '_self'}
                   rel={item.target === '_blank' ? 'noopener noreferrer' : undefined}
-                  className={`px-6 py-3 border-t border-[#3f7328] md:border-none text-white text-[15px] font-bold uppercase hover:bg-[#3f7328] transition-colors ${activeHref === item.href ? 'bg-[#3f7328]' : ''}`}
+                  className={`px-4 lg:px-6 py-3 border-t border-[#3f7328] md:border-none text-white text-[14px] lg:text-[15px] font-serif font-bold uppercase hover:bg-[#3f7328] transition-colors whitespace-nowrap ${activeHref === item.href ? 'bg-[#3f7328]' : ''}`}
                 >
                   {item.label}
                 </a>
