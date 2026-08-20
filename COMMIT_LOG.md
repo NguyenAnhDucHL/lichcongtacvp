@@ -1553,3 +1553,18 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
 - **Tệp thay đổi**:
   - `LichCongTacVanPhong.Api/Properties/launchSettings.json` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "fix(api): sửa đường dẫn DB_PATH trong launchSettings trỏ đúng về dự án mới"`
+
+### [2026-08-20 22:49] Cập nhật định danh thương hiệu (Branding) dự án
+- **Mô tả**: Sửa đổi toàn bộ các từ khoá từ "Lịch Công Tác" chung chung thành "Lịch Công Tác Văn Phòng" (hoặc kết hợp với "Phường Cẩm Phả") để tránh nhầm lẫn với dự án Lịch Uỷ Ban cũ.
+  - Cập nhật thẻ `<title>` trong `index.html` của cả `ClientApp` và `wwwroot`.
+  - Cập nhật `manifest.json` `name`.
+  - Đổi label trên `AdminHeader` từ "LỊCH CÔNG TÁC" thành "LỊCH CÔNG TÁC VĂN PHÒNG".
+  - Cập nhật tên hệ thống trong `SYSTEM_FEATURES.md`.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/index.html` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/wwwroot/index.html` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/public/manifest.json` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/wwwroot/manifest.json` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/src/components/AdminHeader.jsx` (Sửa đổi)
+  - `SYSTEM_FEATURES.md` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "chore(ui): cập nhật định danh hệ thống thành Lịch Công Tác Văn Phòng"`

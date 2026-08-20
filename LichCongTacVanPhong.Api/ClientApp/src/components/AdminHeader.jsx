@@ -44,7 +44,7 @@ export default function AdminHeader() {
         { label: 'Quản trị nhân viên', href: '/campha/manager/employees' },
       ],
     },
-    { label: 'LỊCH CÔNG TÁC', href: '/campha/' },
+    { label: 'LỊCH CÔNG TÁC VĂN PHÒNG', href: '/campha/' },
     { label: 'QUẢN TRỊ LỊCH', href: '/campha/manager/schedules' },
     { label: 'THÔNG BÁO', href: '/campha/manager/notifications' },
     { label: 'NGÀY LỄ', href: '/campha/manager/holidays' },

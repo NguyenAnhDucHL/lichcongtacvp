@@ -1,4 +1,4 @@
-# Tài Liệu Hệ Thống Phần mềm Lịch Công Tác (Dành cho AI & Developer)
+# Tài Liệu Hệ Thống Phần mềm Lịch Công Tác Văn Phòng (Dành cho AI & Developer)
 
 Tài liệu này là "Bộ não" của hệ thống, chứa các thông tin thiết yếu nhất về kiến trúc, cơ sở dữ liệu, API và các luật nghiệp vụ (Business Rules). **AI phải đọc tài liệu này trước khi chỉnh sửa code để tránh phá vỡ logic cũ.**
 
@@ -55,7 +55,7 @@ Tất cả API có prefix `/api/`. Đa số yêu cầu Header `Authorization: Be
 ---
 
 ## 5. Kế Hoạch Triển Khai Tính Năng Mới
-Hệ thống hiện tại là phần mềm chuyên biệt về quản lý Lịch Công Tác.
+Hệ thống hiện tại là phần mềm chuyên biệt về quản lý Lịch Công Tác Văn Phòng.
 Các module chuẩn bị phát triển:
 - API Thêm/Sửa/Xóa lịch trong `SchedulesController`.
 - Giao diện Admin quản lý Lịch (`Admin/Schedules.jsx`).
