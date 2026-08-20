@@ -339,7 +339,7 @@ export default function WorkSchedule() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-5 gap-0 md:gap-4">
             {/* Left: Today */}
-            <div className="flex flex-col h-full md:col-span-3 px-4 pt-5">
+            <div className="flex flex-col h-full md:col-span-3 px-4 pt-5 pb-2 md:pb-0">
               <h3 className="text-[18px] md:text-2xl font-bold text-[#1d5792] text-center mb-5">
                 {todayData.dayLabel}, ngày {todayData.date}
               </h3>
@@ -375,6 +375,12 @@ export default function WorkSchedule() {
                 </div>
               )}
             </div>
+            
+            {/* Mobile Divider */}
+            <div className="md:hidden px-4 mb-4">
+              <hr className="border-gray-200" />
+            </div>
+
             {/* Right: Upcoming */}
             <div className="bg-[#e6fbda] p-4 rounded-sm md:col-span-2">
               {upcoming.length > 0 ? (
