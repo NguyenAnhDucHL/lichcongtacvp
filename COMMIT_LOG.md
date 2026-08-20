@@ -1507,3 +1507,9 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
   - `LichCongTacVanPhong.Api/ClientApp/src/shared/components/PublicLayout.jsx` (Sửa đổi)
   - `LichCongTacVanPhong.Api/ClientApp/src/pages/SearchSchedule.jsx` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "style(ui): phối lại 2 màu nền và footer trang tìm kiếm theo thiết kế gốc"`
+
+### [2026-08-20 22:31] Cập nhật Github Action chạy đúng chuẩn lichcongtacvp
+- **Mô tả**: Sửa cấu hình deploy qua Github Actions để triển khai vào thư mục `/root/lichcongtacvp` và chạy `docker compose` với cờ `-p lichcongtacvp` thay vì tên dự án cũ `lichcongtac`. Đồng bộ với thiết lập tại script `deploy_to_vnpt.sh`.
+- **Tệp thay đổi**:
+  - `.github/workflows/deploy.yml` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "chore(infra): đồng bộ thông tin deploy trong Github Actions thành lichcongtacvp"`
