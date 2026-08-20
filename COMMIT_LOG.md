@@ -1547,3 +1547,9 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
   - `LichCongTacVanPhong.Core/Models/UserModels.cs` (Sửa đổi)
   - `SYSTEM_FEATURES.md` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "refactor: xóa các file code thừa (constants, báo cáo, models) từ hệ thống văn bản cũ"`
+
+### [2026-08-20 22:46] Sửa lỗi đường dẫn DB trong launchSettings
+- **Mô tả**: Phát hiện file `launchSettings.json` vẫn trỏ nhầm `DB_PATH` về database của dự án cũ (`lichcongtac`). Đã sửa lại đường dẫn để trỏ đúng về `/Users/macbookpro/Documents/lichcongtacvp/data_dump/documents.db` của dự án mới, đảm bảo môi trường Development chạy đúng DB.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/Properties/launchSettings.json` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "fix(api): sửa đường dẫn DB_PATH trong launchSettings trỏ đúng về dự án mới"`
