@@ -1649,3 +1649,9 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
   - `LichCongTacVanPhong.Api/ClientApp/src/shared/components/PublicLayout.jsx` (Sửa đổi)
   - `LichCongTacVanPhong.Api/ClientApp/src/features/schedules/components/ScheduleForm.jsx` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "fix(ui): khôi phục thiết kế header tràn viền và các trường nhập liệu trong ScheduleForm"`
+
+### [$(date '+%Y-%m-%d %H:%M')] Update deploy script for deep cleaning
+- **Mô tả**: Thay thế `docker image prune -f` bằng `docker system prune -a -f` và dọn `journalctl` để tránh lỗi đầy ổ cứng 100% làm đứt kết nối Nginx.
+- **Tệp thay đổi**:
+  - `deploy_to_vnpt.sh` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "chore(infra): update deploy script to deep clean docker system and journal logs"`

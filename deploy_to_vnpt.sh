@@ -32,7 +32,7 @@ EOF
 echo "Đang giải nén và khởi động lại Docker trên Server..."
 expect << EOF
 set timeout -1
-spawn ssh -o StrictHostKeyChecking=no $VNPT_USER@$VNPT_HOST "mkdir -p /root/lichcongtacvp; cd /root/lichcongtacvp; tar -xzf /root/deploy.tar.gz; docker compose -p lichcongtacvp down; docker rm -f lichcongtacvp-backend || true; docker compose -p lichcongtacvp up -d --build; docker image prune -f; rm /root/deploy.tar.gz"
+spawn ssh -o StrictHostKeyChecking=no $VNPT_USER@$VNPT_HOST "mkdir -p /root/lichcongtacvp; cd /root/lichcongtacvp; tar -xzf /root/deploy.tar.gz; docker compose -p lichcongtacvp down; docker rm -f lichcongtacvp-backend || true; docker compose -p lichcongtacvp up -d --build; docker system prune -a -f; journalctl --vacuum-time=1d; rm /root/deploy.tar.gz"
 expect {
     "password:" {
         send "$VNPT_PASS\r"
