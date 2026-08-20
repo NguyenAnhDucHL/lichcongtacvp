@@ -1655,3 +1655,9 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
 - **Tệp thay đổi**:
   - `deploy_to_vnpt.sh` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "chore(infra): update deploy script to deep clean docker system and journal logs"`
+
+### [$(date '+%Y-%m-%d %H:%M')] Fix white border gap on mobile menu
+- **Mô tả**: Sửa lỗi hiển thị vạch trắng trên giao diện mobile (sửa class border-white thành md:border-white).
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/src/shared/components/PublicLayout.jsx` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "style(ui): fix white border on mobile active menu item"`
