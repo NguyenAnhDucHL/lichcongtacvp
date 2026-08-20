@@ -106,13 +106,13 @@ function ScheduleItem({ item }) {
           <span className="text-[#005f6b] font-bold mr-1">{item.invitationNumber}</span>
         )}
         {item.location && (
-          <span className="text-[#005f6b] font-bold mr-1 inline">
-            (Tại{' '}
+          <span className="text-[#005f6b] mr-1 inline">
+            <span className="font-bold">(Tại</span>{' '}
             <span
-              className="inline-html-content ml-1"
+              className="inline-html-content"
               dangerouslySetInnerHTML={{ __html: formatLocation(item.location) }}
             />
-            )
+            <span className="font-bold">)</span>
           </span>
         )}
         {cleanContent && (
@@ -306,7 +306,7 @@ export default function WorkSchedule() {
     scheduleService
       .getTodayHoliday()
       .then((d) => setTodayHoliday(d?.content ? d : d?.data || null))
-      .catch(() => {})
+      .catch(() => { })
   }, [lastHolidayUpdate])
 
   const todayData = scheduleData.find((d) => d.isToday) || {

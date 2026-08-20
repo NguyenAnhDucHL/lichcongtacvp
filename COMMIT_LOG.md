@@ -1,3 +1,12 @@
+### [2026-08-21 00:37] Sửa hiển thị in đậm cho chữ 'Tại' trong phần địa điểm
+- **Mô tả**: Theo yêu cầu của người dùng, chữ 'Tại' ở phần địa điểm hiển thị lịch công tác đáng lẽ phải in đậm nhưng hiện tại lại không được in đậm (bị đồng hóa với định dạng của nội dung phía sau). Đã cập nhật lại mã nguồn ở các trang hiển thị lịch (WorkSchedule, AdminSchedules, SearchSchedule) để đóng gói chữ '(Tại' và dấu ')' bằng class `font-bold`, đồng thời loại bỏ font-bold bao trùm cả đoạn để hiển thị chính xác chữ 'Tại' in đậm và phần địa điểm ở phông chữ bình thường.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/src/pages/WorkSchedule.jsx` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/src/features/work-schedule/components/SchedulePanels.jsx` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/src/features/schedules/components/ScheduleTable.jsx` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/src/pages/SearchSchedule.jsx` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "style(ui): chỉ in đậm chữ Tại và dấu ngoặc trong phần hiển thị địa điểm"`
+
 ### [2026-08-21 00:27] Thêm chức năng chọn số dòng hiển thị trang AdminSchedules
 - **Mô tả**: Thêm dropdown cho phép người dùng tuỳ chọn số lượng bản ghi hiển thị trên mỗi trang (10, 20, 50 dòng) ở trang quản lý lịch công tác Admin.
 - **Tệp thay đổi**:

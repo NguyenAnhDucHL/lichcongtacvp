@@ -270,8 +270,8 @@ export default function SearchSchedule() {
                               </span>
                             )}
                             {item.location && (
-                              <span className="text-[#005f6b] font-bold mr-1">
-                                (Tại {extractText(item.location)})
+                              <span className="text-[#005f6b] mr-1">
+                                <span className="font-bold">(Tại</span> {extractText(item.location)}<span className="font-bold">)</span>
                               </span>
                             )}
                             {item.content && (
