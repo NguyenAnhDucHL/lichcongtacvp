@@ -71,7 +71,7 @@ export default function AdminHeader() {
               }}
             />
           </div>
-          <div className="relative z-10 pl-4 md:pl-8 py-2 pr-2">
+          <div className="relative z-10 pl-[90px] md:pl-[130px] py-2 pr-2">
             <h1 className="text-[18px] sm:text-[20px] md:text-[26px] font-bold text-[#1d5792] uppercase m-0 leading-tight tracking-wide">
               LỊCH CÔNG TÁC
             </h1>
