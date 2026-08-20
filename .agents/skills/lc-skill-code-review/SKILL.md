@@ -104,7 +104,6 @@ setData(data); // Không kiểm tra success
 Đối chiếu với `SYSTEM_FEATURES.md` section 4:
 
 - [ ] **Thuật toán 7-3-1**: Logic deadline dùng đúng timezone (UTC+7)
-- [ ] **OCR Flow**: Sau upload phải bắn message vào RabbitMQ
 - [ ] **Password rehash**: Sau login bằng plain-text phải tự động nâng cấp lên BCrypt
 - [ ] **Routing**: Phân biệt giao cho Phòng ban (DepartmentId) vs Cán bộ (AssignedTo)
 

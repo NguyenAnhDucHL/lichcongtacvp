@@ -25,7 +25,7 @@ Bạn là **AI Agent** đang làm việc trong dự án **LichCongTacVanPhong** 
 | **Database** | SQLite + ADO.NET | **KHÔNG Entity Framework**, dùng `SqliteDataReader` |
 | **Frontend** | React 19 + Vite + Tailwind CSS v4 + shadcn/ui | `fetch` API, không Axios |
 | **Auth** | JWT Bearer Token | Header `Authorization: Bearer <token>` |
-| **Queue/Realtime** | RabbitMQ + SignalR | OCR background jobs |
+| **Queue/Realtime** | RabbitMQ + SignalR | Background jobs & realtime notify |
 | **Security** | ClamAV, BCrypt/PBKDF2, Nginx | Rate limiting: 5 req/phút cho auth |
 | **Containerization** | Docker + docker-compose | File DB mount tại `/app/data/` |
 
@@ -51,7 +51,7 @@ LichCongTacVanPhong/
 ├── LichCongTacVanPhong.Core/
 │   ├── Models/ApiResponse.cs     ← Response contract bắt buộc
 │   ├── Data/Repositories/        ← ADO.NET queries
-│   └── Services/                 ← Business logic, OCR services
+│   └── Services/                 ← Business logic services
 ├── LichCongTacVanPhong.Tests/           ← Unit tests bắt buộc
 ├── SYSTEM_FEATURES.md            ← [ĐỌC TRƯỚC] Bộ não hệ thống
 ├── COMMIT_LOG.md                 ← [CẬP NHẬT SAU MỖI THAY ĐỔI]

@@ -1476,3 +1476,15 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
   - `lc-skill-docker-setup.md` -> `lc-skill-docker-setup/SKILL.md` (Mới / Xóa)
   - `lc-skill-ocr-debug.md` -> `lc-skill-ocr-debug/SKILL.md` (Mới / Xóa)
 - **Lệnh git commit**: `git commit -m "chore(docs): restructure AI agent skills directories and update YAML frontmatter"`
+
+### [2026-08-20 22:20] Xoá hoàn toàn vết tích OCR cũ khỏi dự án VP
+- **Mô tả**: Xóa sạch các tài liệu, luật (rules) và kỹ năng (skills) có liên quan đến hệ thống OCR (PaddleOCR, OcrQueueService, OcrImageProcessingService, v.v.). Đây là những thiết lập của dự án `lichcongtac` cũ vô tình bị mang sang dự án `lichcongtacvp` này (vốn không có chức năng OCR). Xoá hoàn toàn kỹ năng `lc-skill-ocr-debug`.
+- **Tệp thay đổi**:
+  - `.agents/skills/lc-skill-ocr-debug/` (Xóa toàn bộ)
+  - `.agents/AGENTS.md` (Sửa đổi)
+  - `.agents/workflows/lc-workflow-new-feature.md` (Sửa đổi)
+  - `.agents/rules/lc-rule-conventional-commits.md` (Sửa đổi)
+  - `.agents/rules/lc-rule-quality-gate.md` (Sửa đổi)
+  - `.agents/skills/lc-skill-code-review/SKILL.md` (Sửa đổi)
+  - `.agents/skills/lc-skill-docker-setup/SKILL.md` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "docs(rules): purge all legacy OCR references from agent guidelines"`

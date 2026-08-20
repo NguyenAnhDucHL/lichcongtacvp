@@ -10,7 +10,7 @@ Quy trình này hướng dẫn cách triển khai một tính năng mới một 
 
 1. Đọc `SYSTEM_FEATURES.md` để nắm kiến trúc tổng thể.
 2. Đọc `COMMIT_LOG.md` để biết thay đổi gần nhất.
-3. Xác định tính năng mới thuộc module nào: `auth`, `docs`, `ocr`, `routing`, `stats`, `users`, `admin`, `notify`.
+3. Xác định tính năng mới thuộc module nào: `auth`, `docs`, `routing`, `stats`, `users`, `admin`, `notify`.
 4. Kiểm tra xem tính năng tương tự đã tồn tại chưa để tránh duplicate logic.
 
 ## Bước 2 — Thiết kế (Design)

@@ -34,7 +34,6 @@ Format chuẩn:
 |---|---|
 | `auth` | Xác thực, JWT, login/logout |
 | `docs` | Quản lý tài liệu |
-| `ocr` | Luồng xử lý OCR + RabbitMQ |
 | `routing` | Điều hướng hệ thống |
 | `stats` | Dashboard, báo cáo |
 | `users` | Quản lý người dùng |
@@ -55,7 +54,6 @@ Format chuẩn:
 
 **✅ HỢP LỆ:**
 ```
-feat(ocr): thêm retry 3 lần khi PaddleOCR timeout
 fix(auth): sửa lỗi BCrypt bị ghi đè rỗng khi update user info
 refactor(docs): tách DocumentExtractorService thành Facade pattern
 test(auth): thêm unit test kiểm tra PBKDF2 và BCrypt hash
