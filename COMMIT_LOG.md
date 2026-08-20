@@ -1568,3 +1568,9 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
   - `LichCongTacVanPhong.Api/ClientApp/src/components/AdminHeader.jsx` (Sửa đổi)
   - `SYSTEM_FEATURES.md` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "chore(ui): cập nhật định danh hệ thống thành Lịch Công Tác Văn Phòng"`
+
+### [2026-08-20 22:55] Đổi màu nền thanh điều hướng (navbar) trên PublicLayout
+- **Mô tả**: Thay đổi màu nền của thanh điều hướng ở giao diện ngoài (PublicLayout) từ màu xanh lá (`bg-[#4caf50]`) sang màu xanh dương đậm (`bg-[#1d5792]`) để đồng bộ với màu sắc tổng thể của AdminHeader và logo mới (Xanh/Đỏ).
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/src/shared/components/PublicLayout.jsx` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "style(ui): đổi màu navbar PublicLayout sang xanh dương đồng bộ admin"`

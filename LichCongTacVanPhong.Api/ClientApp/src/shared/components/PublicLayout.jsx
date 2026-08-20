@@ -52,7 +52,7 @@ export function PublicLayout({ children, activeHref, todayHoliday }) {
 
       {/* Navigation */}
       <div className="max-w-6xl mx-auto">
-        <nav className="bg-[#4caf50] shadow-md relative z-20">
+        <nav className="bg-[#1d5792] shadow-md relative z-20">
           <div className="flex flex-col md:flex-row md:items-center">
             <div
               className="md:hidden flex justify-between items-center px-4 py-3 cursor-pointer"
@@ -72,7 +72,7 @@ export function PublicLayout({ children, activeHref, todayHoliday }) {
                   href={item.href}
                   target={item.target || '_self'}
                   rel={item.target === '_blank' ? 'noopener noreferrer' : undefined}
-                  className={`px-6 py-3 border-t border-[#388e3c] md:border-none text-white text-[15px] font-bold uppercase hover:bg-[#388e3c] transition-colors ${activeHref === item.href ? 'bg-[#388e3c]' : ''}`}
+                  className={`px-6 py-3 border-t border-[#154370] md:border-none text-white text-[15px] font-bold uppercase hover:bg-[#154370] transition-colors ${activeHref === item.href ? 'bg-[#154370]' : ''}`}
                 >
                   {item.label}
                 </a>
