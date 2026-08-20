@@ -122,3 +122,5 @@ LichCongTacVanPhong/
 **Version:** 2.2 (Thêm nguyên tắc Senior Developer)  
 **Last Updated:** 2026-08-08  
 **See also:** [SYSTEM_FEATURES.md](../SYSTEM_FEATURES.md) | [COMMIT_LOG.md](../COMMIT_LOG.md) | [CODE_QUALITY.md](../CODE_QUALITY.md) | [lc-rule-ai-behavior.md](rules/lc-rule-ai-behavior.md) | [lc-rule-no-temporary-files.md](rules/lc-rule-no-temporary-files.md) | [lc-rule-docker-deployment.md](rules/lc-rule-docker-deployment.md) | [lc-rule-senior-developer-guidelines.md](rules/lc-rule-senior-developer-guidelines.md)
+
+**See also:** [lc-rule-ecosystem-paths.md](rules/lc-rule-ecosystem-paths.md) | Thư mục các source code liên kết
