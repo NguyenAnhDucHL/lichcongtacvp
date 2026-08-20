@@ -27,7 +27,7 @@ export function PublicLayout({ children, activeHref, todayHoliday }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-white font-sans text-sm text-gray-800">
+    <div className="min-h-screen bg-[#f4f9fd] font-sans text-sm text-gray-800">
       {/* Header Image */}
       <div className="max-w-6xl mx-auto bg-white relative flex flex-col justify-center min-h-[86px] overflow-hidden">
         <div className="absolute inset-0 z-0 flex justify-start">
@@ -97,7 +97,7 @@ export function PublicLayout({ children, activeHref, todayHoliday }) {
 
       {/* Footer */}
       <div className="max-w-6xl mx-auto">
-        <footer className="bg-[#4caf50] text-white text-center py-2 text-xs mt-8">
+        <footer className="bg-[#1e88e5] text-white text-center py-2 text-[13px] mt-0">
           Bản quyền thuộc về Văn phòng phường Cẩm Phả
         </footer>
       </div>

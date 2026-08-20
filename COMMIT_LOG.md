@@ -1500,3 +1500,10 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
 - **Tệp thay đổi**:
   - `LichCongTacVanPhong.Api/ClientApp/src/components/AdminHeader.jsx` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "style(ui): đổi màu navbar sang tông xanh lá cây đồng bộ với giao diện"`
+
+### [2026-08-20 22:30] Cập nhật màu nền và footer trang tìm kiếm (PublicLayout)
+- **Mô tả**: Thay đổi màu nền của giao diện khách (`PublicLayout`) sang màu xanh nhạt (`#f4f9fd`) và đổi màu background footer thành xanh dương đậm (`#1e88e5`) để chuẩn hóa hai tông màu giống hệt ảnh mẫu. Bỏ viền xanh lá của ô tìm kiếm để tệp vào màu nền.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/src/shared/components/PublicLayout.jsx` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/src/pages/SearchSchedule.jsx` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "style(ui): phối lại 2 màu nền và footer trang tìm kiếm theo thiết kế gốc"`
