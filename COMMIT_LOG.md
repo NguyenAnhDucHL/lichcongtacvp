@@ -1460,3 +1460,9 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
 - **Tệp thay đổi**:
   - `LichCongTacVanPhong.Api/ClientApp/src/pages/AdminLogin.jsx` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "style(ui): sync AdminLogin UI and patch remote DB schema"`
+
+### [2026-08-20 22:10] Sửa lỗi cú pháp docker-compose
+- **Mô tả**: Chuyển thuộc tính `mem_limit` và `cpus` vào trong thẻ `deploy.resources` để tương thích với docker-compose v3.
+- **Tệp thay đổi**:
+  - `docker-compose.yml` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "fix(infra): correct resource limit syntax in docker-compose.yml"`
