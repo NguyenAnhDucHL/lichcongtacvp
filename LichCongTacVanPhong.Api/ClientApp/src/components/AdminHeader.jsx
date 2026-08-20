@@ -110,7 +110,7 @@ export default function AdminHeader() {
                           setOpenDropdown(isOpen ? null : idx)
                         }
                       }}
-                      className={`${baseClass} bg-transparent border-none cursor-pointer h-full ${active ? activeClass : ''} w-full flex items-center justify-between md:block`}
+                      className={`${baseClass} bg-transparent border-none cursor-pointer md:h-full ${active ? activeClass : ''} w-full flex items-center justify-between md:block`}
                     >
                       {item.label}
                       <span className="md:hidden">
@@ -139,7 +139,7 @@ export default function AdminHeader() {
                 <button
                   key={idx}
                   onClick={item.onClick}
-                  className={`${baseClass} bg-transparent border-none cursor-pointer h-full`}
+                  className={`${baseClass} bg-transparent border-none cursor-pointer md:h-full`}
                 >
                   {item.label}
                 </button>
@@ -148,7 +148,7 @@ export default function AdminHeader() {
                   key={idx}
                   to={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`${baseClass} h-full flex items-center ${isActive(item.href) ? activeClass : ''}`}
+                  className={`${baseClass} md:h-full md:flex md:items-center ${isActive(item.href) ? activeClass : ''}`}
                 >
                   {item.label}
                 </Link>
