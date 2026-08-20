@@ -1,3 +1,8 @@
+### [2026-08-21 00:58] Hoàn trả kích thước cơ sở về 18px để đồng bộ với Admin
+- **Mô tả**: Revert kích thước chữ cơ sở của "Giờ" và "Địa điểm" về 18px (đây là kích thước mặc định của trình soạn thảo trong Admin). Vẫn giữ việc gỡ bỏ `prose-sm` để nếu người dùng có chọn font chữ to hơn (ví dụ 24px) trong phần "Nội dung" thì nó sẽ "ăn theo" kích thước đó thay vì bị ép xuống 14px.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/src/features/work-schedule/components/SchedulePanels.jsx` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "style(ui): revert base font size to 18px to sync with admin editor default"`
 ### [2026-08-21 00:54] Tăng kích thước chữ trang chủ hiển thị lịch
 - **Mô tả**: Tăng kích thước chữ cho các mục lịch công tác từ 18px lên 20px, đồng thời loại bỏ giới hạn của `prose-sm` (14px) đối với nội dung chi tiết, giúp văn bản to và rõ ràng như phiên bản cũ.
 - **Tệp thay đổi**:

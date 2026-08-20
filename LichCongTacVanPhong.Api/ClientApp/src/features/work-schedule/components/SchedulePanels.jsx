@@ -16,11 +16,11 @@ export function ScheduleItem({ item }) {
   return (
     <div className="flex gap-2">
       {item.startTime && item.startTime.trim() !== '' && (
-        <span className="text-[#c8102e] shrink-0 font-bold font-['Times_New_Roman',_Times,_serif] text-[20px]">
+        <span className="text-[#c8102e] shrink-0 font-bold font-['Times_New_Roman',_Times,_serif] text-[18px]">
           {item.startTime.trim()}:
         </span>
       )}
-      <div className="font-medium font-['Times_New_Roman',_Times,_serif] text-[20px] leading-relaxed w-full text-justify">
+      <div className="font-medium font-['Times_New_Roman',_Times,_serif] text-[18px] leading-relaxed w-full text-justify">
         <span>
           {item.invitationNumber && (
             <span className="text-[#005f6b] font-bold mr-1">{item.invitationNumber}</span>
@@ -56,7 +56,7 @@ export function TodayPanel({ displayToday, notifications }) {
   return (
     <div className="flex flex-col h-full md:col-span-3 px-4 pt-5">
       <div className="mb-4">
-        <h3 className="text-[20px] md:text-2xl font-bold text-[#1d5792] text-center mb-5">
+        <h3 className="text-[18px] md:text-2xl font-bold text-[#1d5792] text-center mb-5">
           {displayToday.dayLabel}: ngày {displayToday.date}
         </h3>
 
@@ -107,7 +107,7 @@ export function UpcomingPanel({ upcomingSchedules }) {
       {upcomingSchedules.length > 0 ? (
         upcomingSchedules.map((day, dayIdx) => (
           <div key={dayIdx} className="mb-8">
-            <h3 className="text-[20px] md:text-[21px] font-bold text-[#1d5792] mb-4 text-center">
+            <h3 className="text-[18px] md:text-[19px] font-bold text-[#1d5792] mb-4 text-center">
               {day.dayLabel}, ngày {day.date}:
             </h3>
             <div className="space-y-3">
