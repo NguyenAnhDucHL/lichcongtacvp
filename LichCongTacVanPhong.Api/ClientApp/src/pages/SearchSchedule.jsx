@@ -10,7 +10,7 @@ import { vi } from 'date-fns/locale'
 
 registerLocale('vi', vi)
 
-const PAGE_SIZE = 10
+
 const DAYS = ['Chủ nhật', 'Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy']
 
 const extractText = (html) => {
@@ -52,6 +52,7 @@ export default function SearchSchedule() {
   const [searched, setSearched] = useState(false)
   const [loading, setLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
+  const [pageSize, setPageSize] = useState(10)
   const [todayHoliday, setTodayHoliday] = useState(null)
   const { lastHolidayUpdate } = useAppSignalR()
 
@@ -62,10 +63,10 @@ export default function SearchSchedule() {
       .catch(() => { })
   }, [lastHolidayUpdate])
 
-  const fetchResults = async (page) => {
+  const fetchResults = async (page = 1, size = pageSize) => {
     setLoading(true)
     try {
-      const params = { page, pageSize: PAGE_SIZE }
+      const params = { page, pageSize: size }
       if (startDate) params.startDate = startDate
       if (endDate) params.endDate = endDate
       if (keyword.trim()) params.keyword = keyword.trim()
@@ -89,7 +90,7 @@ export default function SearchSchedule() {
   const handleSearch = (e) => {
     e.preventDefault()
     if (currentPage === 1) {
-      fetchResults(1)
+      fetchResults(1, pageSize)
     } else {
       setCurrentPage(1)
     }
@@ -97,12 +98,12 @@ export default function SearchSchedule() {
 
   useEffect(() => {
     if (searched) {
-      fetchResults(currentPage)
+      fetchResults(currentPage, pageSize)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage])
 
-  const totalPages = Math.max(1, Math.ceil(totalCount / PAGE_SIZE))
+  const totalPages = Math.max(1, Math.ceil(totalCount / pageSize))
   const paginated = results
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1)
     .filter((p) => p === 1 || p === totalPages || Math.abs(p - currentPage) <= 2)
@@ -224,8 +225,26 @@ export default function SearchSchedule() {
         {/* Results */}
         {searched && (
           <>
-            <div className="text-gray-500 text-[14px] mb-2">
-              Danh sách lịch làm việc {totalCount > 0 ? `(${totalCount} kết quả)` : ''}
+            <div className="flex items-center justify-between mb-2 gap-4">
+              <span className="text-gray-500 text-[14px]">
+                Danh sách lịch làm việc {totalCount > 0 ? `(${totalCount} kết quả)` : ''}
+              </span>
+              <div className="flex items-center gap-3">
+                <select
+                  value={pageSize}
+                  onChange={(e) => {
+                    const newSize = Number(e.target.value)
+                    setPageSize(newSize)
+                    setCurrentPage(1)
+                    fetchResults(1, newSize)
+                  }}
+                  className="border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none focus:border-[#005f6b] bg-white"
+                >
+                  <option value={10}>10 dòng</option>
+                  <option value={20}>20 dòng</option>
+                  <option value={50}>50 dòng</option>
+                </select>
+              </div>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full min-w-[600px] border-collapse border border-gray-300 text-[15px]">
@@ -252,7 +271,7 @@ export default function SearchSchedule() {
                       return (
                         <tr key={item.id} className="hover:bg-gray-50">
                           <td className="border border-gray-300 py-2.5 px-3 text-center font-bold">
-                            {(currentPage - 1) * PAGE_SIZE + index + 1}
+                            {(currentPage - 1) * pageSize + index + 1}
                           </td>
                           <td className="border border-gray-300 py-2.5 px-3 text-center leading-tight">
                             <div>{di.dayName}</div>
@@ -298,7 +317,7 @@ export default function SearchSchedule() {
               </table>
             </div>
             {/* Pagination */}
-            {totalCount > PAGE_SIZE && (
+            {totalCount > pageSize && (
               <div className="flex items-center justify-center gap-0.5 mt-4 text-xs flex-wrap">
                 {currentPage > 1 && (
                   <button

@@ -1,3 +1,8 @@
+### [2026-08-21 00:47] Thêm tuỳ chọn số dòng hiển thị trên trang tìm kiếm
+- **Mô tả**: Bổ sung dropdown cho phép người dùng chọn số dòng hiển thị (10, 20, 50) trên trang Tìm kiếm lịch công tác công khai (SearchSchedule), tương tự như trang Admin.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/src/pages/SearchSchedule.jsx` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "feat(ui): add pageSize selector to search schedule page"`
 ### [2026-08-21 00:43] Sửa hiển thị in đậm toàn bộ cho ô địa điểm
 - **Mô tả**: Theo yêu cầu của người dùng, toàn bộ nội dung trong ô địa điểm (bao gồm cả chữ 'Tại' và tên địa điểm) đều phải được in đậm và hiển thị cùng một màu chữ (màu xanh #005f6b). Đã cập nhật lại thẻ bao ngoài thành `font-bold text-[#005f6b]` và thêm CSS rules `font-weight: inherit !important; color: inherit !important;` vào `globals.css` để ngăn chặn các định dạng cũ từ Rich Text Editor ghi đè lên màu sắc và độ đậm của chữ.
 - **Tệp thay đổi**:
