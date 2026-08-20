@@ -49,24 +49,4 @@ namespace LichCongTacVanPhong.Models
         public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
 
-    public class Comment
-    {
-        public int Id { get; set; }
-        public int DocumentId { get; set; }
-        public int UserId { get; set; }
-        public string Username { get; set; } = ""; // Để hiển thị tên người chat
-        public string Content { get; set; } = "";
-        public string? AttachmentPaths { get; set; } // JSON list of file paths
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
-    }
-
-    public class CommentReaction
-    {
-        public int Id { get; set; }
-        public int CommentId { get; set; }
-        public int UserId { get; set; }
-        public string Username { get; set; } = "";
-        public string ReactionType { get; set; } = ""; // like, love, hate, dislike
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
-    }
 }

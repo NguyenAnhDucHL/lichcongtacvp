@@ -19,7 +19,6 @@ Tài liệu này là "Bộ não" của hệ thống, chứa các thông tin thi�
 ### Bảng Hệ thống & Người dùng
 - **`Users`**: `Id`, `Username`, `PasswordHash`, `FullName`, `Email`, `PhoneNumber`, `Role` (Admin, LanhDao, VanThu, CanBo), `DepartmentId`. (Hỗ trợ cột Identity: `SecurityStamp`, `NormalizedUserName`, `LockoutEnabled`, v.v.)
 - **`Departments`**: Quản lý phòng ban (`Id`, `Name`, `Code`, `ParentId`).
-- **`AppSettings`**: Cấu hình hệ thống.
 - **`AuditLogs` & `LoginAuditLog`**: Nhật ký hoạt động và nhật ký đăng nhập.
 
 ### Bảng Nghiệp vụ (Lịch Công Tác)

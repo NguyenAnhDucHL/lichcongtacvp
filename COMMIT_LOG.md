@@ -1532,3 +1532,18 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
   - `.agents/skills/lc-skill-docker-setup/SKILL.md` (Sửa đổi)
   - `CODE_QUALITY.md` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "chore(cleanup): dọn dẹp triệt để các thiết lập OCR và RabbitMQ thừa từ dự án cũ"`
+
+### [2026-08-20 22:45] Xóa các file code thừa từ dự án cũ
+- **Mô tả**: Xóa bỏ các hằng số, model và logic xuất file báo cáo không còn được sử dụng ở dự án Lịch Công Tác Văn Phòng.
+  - Xóa `constants.js` vì chứa trạng thái của hệ thống quản lý văn bản cũ.
+  - Xóa `ReportExportLogic.js` vì chứa code xuất file báo cáo văn bản.
+  - Xóa model `AppSetting` trong `AppSetting.cs`.
+  - Loại bỏ model `Comment` và `CommentReaction` trong `UserModels.cs`.
+  - Cập nhật `SYSTEM_FEATURES.md` để bỏ nhắc đến `AppSettings`.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/src/lib/constants.js` (Xóa)
+  - `LichCongTacVanPhong.Api/ClientApp/src/lib/ReportExportLogic.js` (Xóa)
+  - `LichCongTacVanPhong.Core/Models/AppSetting.cs` (Xóa)
+  - `LichCongTacVanPhong.Core/Models/UserModels.cs` (Sửa đổi)
+  - `SYSTEM_FEATURES.md` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "refactor: xóa các file code thừa (constants, báo cáo, models) từ hệ thống văn bản cũ"`
