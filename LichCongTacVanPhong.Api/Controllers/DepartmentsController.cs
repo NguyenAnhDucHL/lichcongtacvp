@@ -21,14 +21,7 @@ namespace LichCongTacVanPhong.Api.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            var departments = new List<Department>
-            {
-                new Department { Id = 1, Name = "Phòng Kinh tế" },
-                new Department { Id = 2, Name = "Phòng Xây dựng, Nông nghiệp và Môi trường" },
-                new Department { Id = 3, Name = "Văn phòng HĐND và UBND" },
-                new Department { Id = 4, Name = "Phòng Văn hóa-Xã hội" },
-                new Department { Id = 5, Name = "Hành chính công" }
-            };
+            var departments = _departmentRepository.GetAll();
             return Ok(ApiResponse.Ok(departments));
         }
 
