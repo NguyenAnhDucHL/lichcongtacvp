@@ -1428,3 +1428,9 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
 - **Tệp thay đổi**:
   - `README.md` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "docs: remove leftover OCR and Document descriptions in README"`
+
+### [2026-08-20 15:24] Cập nhật port chạy Docker để tránh xung đột
+- **Mô tả**: Thay đổi cổng expose của hệ thống Lịch Công Tác từ `59608` sang `8081` để tận dụng cổng đã mở sẵn trên Firewall của VNPT Cloud, đồng thời tránh xung đột port với bản sao `lichcongtac` gốc đang sử dụng cổng `59608`.
+- **Tệp thay đổi**:
+  - `docker-compose.yml` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "chore(infra): đổi port sang 8081 tránh conflict với dự án cũ"`
