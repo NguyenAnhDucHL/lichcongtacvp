@@ -52,9 +52,9 @@ export default function AdminHeader() {
     { label: 'ĐĂNG XUẤT', href: null, onClick: handleLogout },
   ]
 
-  const activeClass = 'bg-[#1d5792] md:border-b-2 border-white text-white'
+  const activeClass = 'bg-[#325b1f] md:border-b-2 border-white text-white'
   const baseClass =
-    'px-6 py-3 border-t border-[#46b8da] md:border-none text-white text-[13px] md:text-xs font-bold uppercase hover:bg-[#46b8da] transition-colors w-full md:w-auto text-left md:text-center block md:inline-block'
+    'px-6 py-3 border-t border-[#3f7328] md:border-none text-white text-[13px] md:text-xs font-bold uppercase hover:bg-[#3f7328] transition-colors w-full md:w-auto text-left md:text-center block md:inline-block'
 
   return (
     <>
@@ -81,7 +81,7 @@ export default function AdminHeader() {
       </div>
 
       {/* Navigation */}
-      <nav className="bg-[#5bc0de] relative z-50">
+      <nav className="bg-[#4d8b31] relative z-50">
         <div className="max-w-[1000px] mx-auto flex flex-col md:flex-row md:items-center">
           {/* Mobile Menu Toggle */}
           <div
@@ -118,14 +118,14 @@ export default function AdminHeader() {
                       </span>
                     </button>
                     <div
-                      className={`${isOpen ? 'block' : 'hidden'} md:group-hover:block md:absolute left-0 top-full bg-[#31b0d5] md:bg-white md:shadow-lg border-t border-[#2a9bba] md:border-gray-200 min-w-[200px] md:py-1 z-50 w-full md:w-auto`}
+                      className={`${isOpen ? 'block' : 'hidden'} md:group-hover:block md:absolute left-0 top-full bg-[#4d8b31] md:bg-white md:shadow-lg border-t border-[#3f7328] md:border-gray-200 min-w-[200px] md:py-1 z-50 w-full md:w-auto`}
                     >
                       {item.subItems.map((sub, sidx) => (
                         <Link
                           key={sidx}
                           to={sub.href}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className={`block px-8 py-3 md:px-4 md:py-2 border-b border-[#2a9bba] md:border-none md:border-t md:border-gray-100 hover:bg-[#2a9bba] md:hover:bg-[#5bc0de] hover:text-white transition-colors ${isActive(sub.href) ? 'bg-[#2a9bba] md:bg-[#5bc0de] text-white font-bold' : 'text-white md:text-gray-800'}`}
+                          className={`block px-8 py-3 md:px-4 md:py-2 border-b border-[#3f7328] md:border-none md:border-t md:border-gray-100 hover:bg-[#3f7328] md:hover:bg-[#4d8b31] hover:text-white transition-colors ${isActive(sub.href) ? 'bg-[#3f7328] md:bg-[#4d8b31] text-white font-bold' : 'text-white md:text-gray-800'}`}
                         >
                           {sub.label}
                         </Link>

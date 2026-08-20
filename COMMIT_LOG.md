@@ -1494,3 +1494,9 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
 - **Tệp thay đổi**:
   - `.agents/rules/lc-rule-docker-deployment.md` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "docs(rules): fix project name reference in docker deployment rule"`
+
+### [2026-08-20 22:28] Cập nhật màu sắc giao diện theo mẫu Cổng thông tin
+- **Mô tả**: Thay đổi màu nền của thanh điều hướng (navbar) từ màu xanh dương nhạt (`#5bc0de`) sang màu xanh lá cây (`#4d8b31`) để đồng bộ với thiết kế chung của trang web (dựa trên ảnh mẫu người dùng cung cấp). Cập nhật cả các trạng thái hover và active cho phù hợp với tông màu xanh lá.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/src/components/AdminHeader.jsx` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "style(ui): đổi màu navbar sang tông xanh lá cây đồng bộ với giao diện"`
