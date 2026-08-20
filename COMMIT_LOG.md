@@ -1580,3 +1580,9 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
 - **Tệp thay đổi**:
   - `LichCongTacVanPhong.Api/ClientApp/src/shared/components/PublicLayout.jsx` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "fix(ui): sửa lại màu navbar PublicLayout về màu xanh lá đồng bộ với Admin"`
+
+### [2026-08-20 23:01] Căn chỉnh thanh điều hướng AdminHeader không tràn viền
+- **Mô tả**: Bọc thanh điều hướng `<nav>` trong component `AdminHeader.jsx` bằng một thẻ `<div className="max-w-[1000px] mx-auto">` để giới hạn chiều rộng của nó. Tránh tình trạng màu nền xanh lá cây bị kéo giãn tràn ra 2 bên màn hình (100% width) trên các thiết bị màn hình rộng.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/src/components/AdminHeader.jsx` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "style(ui): giới hạn chiều rộng navbar AdminHeader không tràn màn hình"`

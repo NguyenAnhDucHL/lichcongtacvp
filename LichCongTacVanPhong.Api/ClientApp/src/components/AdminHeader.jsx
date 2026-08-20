@@ -81,8 +81,9 @@ export default function AdminHeader() {
       </div>
 
       {/* Navigation */}
-      <nav className="bg-[#4d8b31] relative z-50">
-        <div className="max-w-[1000px] mx-auto flex flex-col md:flex-row md:items-center">
+      <div className="max-w-[1000px] mx-auto">
+        <nav className="bg-[#4d8b31] relative z-50">
+          <div className="flex flex-col md:flex-row md:items-center">
           {/* Mobile Menu Toggle */}
           <div
             className="md:hidden flex justify-between items-center px-4 py-3 cursor-pointer"
@@ -155,8 +156,10 @@ export default function AdminHeader() {
               )
             })}
           </div>
-        </div>
-      </nav>
+            </div>
+          </div>
+        </nav>
+      </div>
     </>
   )
 }
