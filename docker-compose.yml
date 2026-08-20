@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: lichcongtac-backend
+    container_name: lichcongtacvp-backend
     expose:
       - "5000"
     ports:

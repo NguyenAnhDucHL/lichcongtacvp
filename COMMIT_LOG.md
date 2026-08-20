@@ -1434,3 +1434,9 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
 - **Tệp thay đổi**:
   - `docker-compose.yml` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "chore(infra): đổi port sang 8081 tránh conflict với dự án cũ"`
+
+### [2026-08-20 15:37] Sửa lỗi xung đột container name khi deploy
+- **Mô tả**: Sửa thuộc tính `container_name` trong `docker-compose.yml` từ `lichcongtac-backend` thành `lichcongtacvp-backend` để không bị trùng tên với container của dự án cũ.
+- **Tệp thay đổi**:
+  - `docker-compose.yml` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "fix(infra): đổi tên container tránh xung đột với dự án cũ"`
