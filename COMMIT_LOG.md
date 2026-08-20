@@ -1,3 +1,9 @@
+### [2026-08-21 00:27] Thêm chức năng chọn số dòng hiển thị trang AdminSchedules
+- **Mô tả**: Thêm dropdown cho phép người dùng tuỳ chọn số lượng bản ghi hiển thị trên mỗi trang (10, 20, 50 dòng) ở trang quản lý lịch công tác Admin.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/src/pages/AdminSchedules.jsx` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "feat(admin): thêm chức năng chọn số dòng hiển thị trang quản lý lịch"`
+
 ### [2026-08-20 13:38] Clone hệ thống Lịch Công Tác cho Văn Phòng Phường Cẩm Phả
 - **Mô tả**: Clone source code cho Văn Phòng Phường Cẩm Phả, đổi màu nền thanh header và footer sang màu xanh lá cây theo yêu cầu, đổi text "UBND PHƯỜNG CẨM PHẢ" thành "VĂN PHÒNG PHƯỜNG CẨM PHẢ". Đổi tên dự án từ LichCongTac thành LichCongTacVanPhong. Xóa sạch dữ liệu cũ trong bảng Schedules.
 - **Tệp thay đổi**:

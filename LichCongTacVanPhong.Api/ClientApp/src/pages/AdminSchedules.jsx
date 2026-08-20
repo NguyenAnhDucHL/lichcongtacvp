@@ -52,12 +52,11 @@ export default function AdminSchedules() {
   const [deleteConfirmOpen, setDeleteConfirmOpen] = useState(false)
   const [itemToDelete, setItemToDelete] = useState(null)
   const [isDeleting, setIsDeleting] = useState(false)
+  const [pageSize, setPageSize] = useState(10)
 
-  const PAGE_SIZE = 10
-
-  const fetchSchedules = useCallback(async (page = 1, kw = keyword) => {
+  const fetchSchedules = async (page = 1, kw = keyword, size = pageSize) => {
     try {
-      const data = await adminService.getSchedulesPaginated(page, PAGE_SIZE, kw)
+      const data = await adminService.getSchedulesPaginated(page, size, kw)
       // Server trả về { items, totalCount, page, pageSize, totalPages }
       if (data && 'items' in data) {
         setSchedules(Array.isArray(data.items) ? data.items : [])
@@ -71,14 +70,13 @@ export default function AdminSchedules() {
     } catch (err) {
       console.error('Lỗi tải danh sách lịch:', err)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }
 
   // Search với debounce 400ms tránh gọi API mỗi ký tự
   useEffect(() => {
     const timer = setTimeout(() => {
       setCurrentPage(1)
-      fetchSchedules(1, keyword)
+      fetchSchedules(1, keyword, pageSize)
     }, 400)
     return () => clearTimeout(timer)
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -219,6 +217,20 @@ export default function AdminSchedules() {
             Danh sách lịch làm việc ({totalCount} bản ghi)
           </span>
           <div className="flex items-center gap-3">
+            <select
+              value={pageSize}
+              onChange={(e) => {
+                const newSize = Number(e.target.value)
+                setPageSize(newSize)
+                setCurrentPage(1)
+                fetchSchedules(1, keyword, newSize)
+              }}
+              className="border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none focus:border-blue-400 bg-white"
+            >
+              <option value={10}>10 dòng</option>
+              <option value={20}>20 dòng</option>
+              <option value={50}>50 dòng</option>
+            </select>
             <input
               type="text"
               placeholder="Tìm kiếm..."
@@ -235,7 +247,7 @@ export default function AdminSchedules() {
         <ScheduleTable
           schedules={schedules}
           currentPage={currentPage}
-          pageSize={PAGE_SIZE}
+          pageSize={pageSize}
           serverSide={true}
           onEdit={handleEdit}
           onDelete={(id) => {
@@ -248,10 +260,10 @@ export default function AdminSchedules() {
           currentPage={currentPage}
           setCurrentPage={(p) => {
             setCurrentPage(p)
-            fetchSchedules(p, keyword)
+            fetchSchedules(p, keyword, pageSize)
           }}
           totalItems={totalCount}
-          pageSize={PAGE_SIZE}
+          pageSize={pageSize}
         />
       </main>
 
