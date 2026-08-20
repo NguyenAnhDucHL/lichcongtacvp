@@ -34,9 +34,9 @@ export function ScheduleTable({
   serverSide = false,
 }) {
   return (
-    <div className="overflow-x-auto">
-      <table className="w-full border-collapse border border-gray-200 text-center">
-        <thead>
+    <div className="w-full">
+      <table className="w-full border-collapse border-t border-gray-200 text-center block md:table">
+        <thead className="hidden md:table-header-group">
           <tr className="bg-[#fff3eb]">
             <th className="border border-gray-200 py-3 px-4 font-bold w-12">STT</th>
             <th className="border border-gray-200 py-3 px-4 font-bold w-32">Ngày</th>
@@ -47,7 +47,7 @@ export function ScheduleTable({
             <th className="border border-gray-200 py-3 px-4 font-bold w-16">Xóa</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="block md:table-row-group">
           {schedules.length > 0 ? (
             (serverSide
               ? schedules
@@ -56,13 +56,19 @@ export function ScheduleTable({
               const globalIndex = (currentPage - 1) * pageSize + index + 1
               const dateInfo = formatDateDisplay(item.date)
               return (
-                <tr key={item.id} className="hover:bg-gray-50">
-                  <td className="border border-gray-200 py-2.5 px-4 font-bold">{globalIndex}</td>
-                  <td className="border border-gray-200 py-2.5 px-4 leading-tight">
-                    <div>{dateInfo.dayName}</div>
-                    <div className="text-blue-700 font-bold">{dateInfo.date}</div>
+                <tr key={item.id} className="block md:table-row border border-gray-200 mb-4 md:mb-0 hover:bg-gray-50 bg-white">
+                  <td className="block md:table-cell border-b md:border-gray-200 py-2.5 px-4 text-left md:text-center font-bold">
+                    <span className="inline-block w-24 font-bold md:hidden text-gray-600">STT:</span>
+                    {globalIndex}
                   </td>
-                  <td className="border border-gray-200 py-2.5 px-4 text-left">
+                  <td className="block md:table-cell border-b md:border-gray-200 py-2.5 px-4 text-left md:text-center leading-tight">
+                    <span className="inline-block w-24 font-bold md:hidden text-gray-600">Ngày:</span>
+                    <span className="inline-block md:block">{dateInfo.dayName}</span>
+                    <span className="inline-block md:block text-blue-700 font-bold ml-1 md:ml-0">{dateInfo.date}</span>
+                  </td>
+                  <td className="block md:table-cell border-b md:border-gray-200 py-2.5 px-4 text-left">
+                    <span className="inline-block w-24 font-bold md:hidden text-gray-600 align-top">Nội dung:</span>
+                    <div className="inline-block w-full md:w-auto">
                     <span className="text-red-600 font-bold mr-2">
                       {item.startTime ? `${item.startTime}:` : ''}
                     </span>
@@ -80,15 +86,18 @@ export function ScheduleTable({
                       <span className="text-gray-800">
                         {item.content && ` ${extractTextFromHtml(item.content)} `}
                       </span>
-                    </span>
+                    </div>
                   </td>
-                  <td className="border border-gray-200 py-2.5 px-4">
+                  <td className="block md:table-cell border-b md:border-gray-200 py-2.5 px-4 text-left md:text-center">
+                    <span className="inline-block w-24 font-bold md:hidden text-gray-600">Phòng ban:</span>
                     {extractTextFromHtml(item.preparingUnit) || 'CƠ QUAN'}
                   </td>
-                  <td className="border border-gray-200 py-2.5 px-4">
+                  <td className="block md:table-cell border-b md:border-gray-200 py-2.5 px-4 text-left md:text-center">
+                    <span className="inline-block w-24 font-bold md:hidden text-gray-600">Hiển thị:</span>
                     {item.isPublic ? 'Có' : 'Không'}
                   </td>
-                  <td className="border border-gray-200 py-2.5 px-4">
+                  <td className="block md:table-cell border-b md:border-gray-200 py-2.5 px-4 text-left md:text-center">
+                    <span className="inline-block w-24 font-bold md:hidden text-gray-600">Hành động:</span>
                     <a
                       href="#"
                       className="text-[#337ab7] hover:underline"
@@ -99,8 +108,9 @@ export function ScheduleTable({
                     >
                       Sửa
                     </a>
+                    <span className="md:hidden mx-2">|</span>
                   </td>
-                  <td className="border border-gray-200 py-2.5 px-4">
+                  <td className="inline-block md:table-cell py-2.5 px-4">
                     <a
                       href="#"
                       className="text-[#337ab7] hover:underline"

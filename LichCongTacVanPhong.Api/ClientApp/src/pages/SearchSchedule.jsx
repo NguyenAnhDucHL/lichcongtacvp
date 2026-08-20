@@ -246,9 +246,9 @@ export default function SearchSchedule() {
                 </select>
               </div>
             </div>
-            <div className="overflow-x-auto">
-              <table className="w-full min-w-[600px] border-collapse border border-gray-300 text-[15px]">
-                <thead>
+            <div className="w-full">
+              <table className="w-full border-collapse border-t border-gray-300 text-[15px] block md:table">
+                <thead className="hidden md:table-header-group">
                   <tr className="bg-[#fce8d5]">
                     <th className="border border-gray-300 py-2 px-3 font-bold w-12 text-center">
                       STT
@@ -264,20 +264,24 @@ export default function SearchSchedule() {
                     </th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody className="block md:table-row-group">
                   {paginated.length > 0 ? (
                     paginated.map((item, index) => {
                       const di = formatDateDisplay(item.date)
                       return (
-                        <tr key={item.id} className="hover:bg-gray-50">
-                          <td className="border border-gray-300 py-2.5 px-3 text-center font-bold">
-                            {(currentPage - 1) * pageSize + index + 1}
+                        <tr key={item.id} className="block md:table-row border border-gray-300 mb-4 md:mb-0 hover:bg-gray-50 bg-white">
+                          <td className="block md:table-cell border-b md:border-gray-300 py-2.5 px-3 text-left md:text-center">
+                            <span className="inline-block w-24 font-bold md:hidden text-gray-600">STT:</span>
+                            <span className="font-bold">{(currentPage - 1) * pageSize + index + 1}</span>
                           </td>
-                          <td className="border border-gray-300 py-2.5 px-3 text-center leading-tight">
-                            <div>{di.dayName}</div>
-                            <div className="text-[#1d5792] font-bold">{di.date}</div>
+                          <td className="block md:table-cell border-b md:border-gray-300 py-2.5 px-3 text-left md:text-center leading-tight">
+                            <span className="inline-block w-24 font-bold md:hidden text-gray-600">Ngày:</span>
+                            <span className="inline-block md:block">{di.dayName}</span>
+                            <span className="inline-block md:block text-[#1d5792] font-bold ml-1 md:ml-0">{di.date}</span>
                           </td>
-                          <td className="border border-gray-300 py-2.5 px-3">
+                          <td className="block md:table-cell border-b md:border-gray-300 py-2.5 px-3">
+                            <span className="inline-block w-24 font-bold md:hidden text-gray-600 align-top">Nội dung:</span>
+                            <div className="inline-block w-full md:w-auto">
                             {item.startTime?.trim() && (
                               <span className="text-[#c8102e] font-bold mr-2">
                                 {item.startTime.trim()}:
@@ -296,9 +300,11 @@ export default function SearchSchedule() {
                             {item.content && (
                               <span className="text-gray-900">{extractText(item.content)}</span>
                             )}
+                            </div>
                           </td>
-                          <td className="border border-gray-300 py-2.5 px-3 text-center">
-                            {extractText(item.preparingUnit) || 'Văn phòng'}
+                          <td className="block md:table-cell py-2.5 px-3 text-left md:text-center">
+                            <span className="inline-block w-24 font-bold md:hidden text-gray-600">Phòng ban:</span>
+                            {extractText(item.preparingUnit) || 'CƠ QUAN'}
                           </td>
                         </tr>
                       )
