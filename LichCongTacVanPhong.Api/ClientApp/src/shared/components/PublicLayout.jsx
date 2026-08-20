@@ -34,24 +34,23 @@ export function PublicLayout({ children, activeHref, todayHoliday }) {
     <div className="min-h-screen font-sans text-sm text-gray-800 flex flex-col max-w-[1000px] mx-auto shadow-sm">
       {/* Header Image */}
       <div className="bg-white relative flex flex-col justify-center min-h-[90px] overflow-hidden">
-          <div className="absolute inset-0 z-0 flex justify-start">
-            <img
-              src="/assets/header-banner.jpg"
-              alt="Lịch Công Tác"
-              className="h-full w-auto max-h-[90px] object-contain"
-              onError={(e) => {
-                e.target.style.display = 'none'
-              }}
-            />
-          </div>
-          <div className="relative z-10 pl-[90px] md:pl-[130px] py-2 pr-2">
-            <h1 className="text-[18px] sm:text-[20px] md:text-[24px] font-bold text-[#1d5792] uppercase m-0 leading-tight tracking-wide">
-              LỊCH CÔNG TÁC
-            </h1>
-            <h1 className="text-[13px] sm:text-[15px] md:text-[18px] font-bold text-[#c8102e] uppercase m-0 leading-tight tracking-wide mt-1">
-              VĂN PHÒNG PHƯỜNG CẨM PHẢ
-            </h1>
-          </div>
+        <div className="absolute inset-0 z-0 flex justify-start">
+          <img
+            src="/assets/header-banner.jpg"
+            alt="Lịch Công Tác"
+            className="h-full w-auto max-h-[90px] object-contain"
+            onError={(e) => {
+              e.target.style.display = 'none'
+            }}
+          />
+        </div>
+        <div className="relative z-10 pl-[90px] md:pl-[130px] py-2 pr-2">
+          <h1 className="text-[18px] sm:text-[20px] md:text-[24px] font-bold text-[#1d5792] uppercase m-0 leading-tight tracking-wide">
+            LỊCH CÔNG TÁC
+          </h1>
+          <h1 className="text-[13px] sm:text-[15px] md:text-[18px] font-bold text-[#c8102e] uppercase m-0 leading-tight tracking-wide mt-1">
+            VĂN PHÒNG PHƯỜNG CẨM PHẢ
+          </h1>
         </div>
       </div>
 
@@ -86,15 +85,17 @@ export function PublicLayout({ children, activeHref, todayHoliday }) {
       </nav>
 
       {/* Holiday Marquee */}
-      {todayHoliday && (
-        <div className="bg-[#fcf8e3] border-b border-[#faebcc]">
-          <div className="text-[#c8102e] py-1.5 overflow-hidden whitespace-nowrap relative">
-            <marquee scrollamount="6" className="text-[13px] font-semibold tracking-wide">
-              ⚛ {todayHoliday.content} ⚛
-            </marquee>
+      {
+        todayHoliday && (
+          <div className="bg-[#fcf8e3] border-b border-[#faebcc]">
+            <div className="text-[#c8102e] py-1.5 overflow-hidden whitespace-nowrap relative">
+              <marquee scrollamount="6" className="text-[13px] font-semibold tracking-wide">
+                ⚛ {todayHoliday.content} ⚛
+              </marquee>
+            </div>
           </div>
-        </div>
-      )}
+        )
+      }
 
       {/* Main Content */}
       <div className="flex-grow">
@@ -107,6 +108,6 @@ export function PublicLayout({ children, activeHref, todayHoliday }) {
           Bản quyền thuộc về UBND phường Cẩm Phả
         </div>
       </footer>
-    </div>
+    </div >
   )
 }
