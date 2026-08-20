@@ -26,66 +26,70 @@ const PUBLIC_NAV = [
 export function PublicLayout({ children, activeHref, todayHoliday }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
+  const activeClass = 'bg-[#325b1f] md:border-b-2 border-white text-white'
+  const baseClass =
+    'px-6 py-3 border-t border-[#3f7328] md:border-none text-white text-[13px] md:text-xs font-bold uppercase hover:bg-[#3f7328] transition-colors w-full md:w-auto text-left md:text-center block md:inline-block'
+
   return (
-    <div className="min-h-screen bg-white font-sans text-sm text-gray-800">
+    <div className="min-h-screen bg-white font-sans text-sm text-gray-800 flex flex-col">
       {/* Header Image */}
-      <div className="max-w-6xl mx-auto bg-white relative flex flex-col justify-center min-h-[86px] overflow-hidden">
-        <div className="absolute inset-0 z-0 flex justify-start">
-          <img
-            src="/assets/header-banner.jpg"
-            alt="Lịch Công Tác UBND Phường Cẩm Phả"
-            className="h-full w-auto max-h-[86px] object-contain"
-            onError={(e) => {
-              e.target.style.display = 'none'
-            }}
-          />
-        </div>
-        <div className="relative z-10 pl-[90px] md:pl-[130px] py-2 pr-2">
-          <h1 className="text-[18px] sm:text-[20px] md:text-[24px] font-bold text-[#1d5792] uppercase m-0 leading-tight tracking-wide">
-            LỊCH CÔNG TÁC
-          </h1>
-          <h1 className="text-[13px] sm:text-[15px] md:text-[18px] font-bold text-[#c8102e] uppercase m-0 leading-tight tracking-wide mt-1">
-            UBND PHƯỜNG CẨM PHẢ
-          </h1>
+      <div className="bg-white">
+        <div className="max-w-[1000px] mx-auto relative flex flex-col justify-center min-h-[90px] overflow-hidden">
+          <div className="absolute inset-0 z-0 flex justify-start">
+            <img
+              src="/assets/header-banner.jpg"
+              alt="Lịch Công Tác"
+              className="h-full w-auto max-h-[90px] object-contain"
+              onError={(e) => {
+                e.target.style.display = 'none'
+              }}
+            />
+          </div>
+          <div className="relative z-10 pl-[90px] md:pl-[130px] py-2 pr-2">
+            <h1 className="text-[18px] sm:text-[20px] md:text-[24px] font-bold text-[#1d5792] uppercase m-0 leading-tight tracking-wide">
+              LỊCH CÔNG TÁC
+            </h1>
+            <h1 className="text-[13px] sm:text-[15px] md:text-[18px] font-bold text-[#c8102e] uppercase m-0 leading-tight tracking-wide mt-1">
+              UBND PHƯỜNG CẨM PHẢ
+            </h1>
+          </div>
         </div>
       </div>
 
       {/* Navigation */}
-      <div className="max-w-6xl mx-auto">
-        <nav className="bg-[#1d5792] shadow-md relative z-20">
-          <div className="flex flex-col md:flex-row md:items-center">
-            <div
-              className="md:hidden flex justify-between items-center px-4 py-3 cursor-pointer"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              <span className="text-white font-serif font-bold uppercase text-base tracking-wide">
-                MENU
-              </span>
-              <Menu className="text-white w-7 h-7" />
-            </div>
-            <div
-              className={`${isMobileMenuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row w-full`}
-            >
-              {PUBLIC_NAV.map((item, idx) => (
-                <a
-                  key={idx}
-                  href={item.href}
-                  target={item.target || '_self'}
-                  rel={item.target === '_blank' ? 'noopener noreferrer' : undefined}
-                  className={`px-6 py-3 border-t border-[#154374] md:border-none text-white text-[15px] font-bold uppercase hover:bg-[#154374] transition-colors ${activeHref === item.href ? 'bg-[#154374]' : ''}`}
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
+      <nav className="bg-[#4d8b31] relative z-20">
+        <div className="max-w-[1000px] mx-auto flex flex-col md:flex-row md:items-center">
+          <div
+            className="md:hidden flex justify-between items-center px-4 py-3 cursor-pointer"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <span className="text-white font-serif font-bold uppercase text-base tracking-wide">
+              MENU
+            </span>
+            <Menu className="text-white w-7 h-7" />
           </div>
-        </nav>
-      </div>
+          <div
+            className={`${isMobileMenuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row w-full`}
+          >
+            {PUBLIC_NAV.map((item, idx) => (
+              <a
+                key={idx}
+                href={item.href}
+                target={item.target || '_self'}
+                rel={item.target === '_blank' ? 'noopener noreferrer' : undefined}
+                className={`${baseClass} ${activeHref === item.href ? activeClass : ''}`}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </nav>
 
       {/* Holiday Marquee */}
       {todayHoliday && (
-        <div className="max-w-6xl mx-auto">
-          <div className="bg-[#fcf8e3] text-[#c8102e] py-1.5 border-b border-[#faebcc] overflow-hidden whitespace-nowrap relative">
+        <div className="bg-[#fcf8e3] border-b border-[#faebcc]">
+          <div className="max-w-[1000px] mx-auto text-[#c8102e] py-1.5 overflow-hidden whitespace-nowrap relative">
             <marquee scrollamount="6" className="text-[13px] font-semibold tracking-wide">
               ⚛ {todayHoliday.content} ⚛
             </marquee>
@@ -93,14 +97,17 @@ export function PublicLayout({ children, activeHref, todayHoliday }) {
         </div>
       )}
 
-      {children}
+      {/* Main Content */}
+      <div className="flex-grow">
+        {children}
+      </div>
 
       {/* Footer */}
-      <div className="max-w-6xl mx-auto">
-        <footer className="bg-[#1d8fe8] text-white text-center py-2 text-xs mt-8">
+      <footer className="bg-[#4d8b31] text-white text-center py-3 text-xs mt-auto">
+        <div className="max-w-[1000px] mx-auto">
           Bản quyền thuộc về UBND phường Cẩm Phả
-        </footer>
-      </div>
+        </div>
+      </footer>
     </div>
   )
 }
