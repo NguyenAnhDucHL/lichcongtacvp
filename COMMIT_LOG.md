@@ -1488,3 +1488,9 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
   - `.agents/skills/lc-skill-code-review/SKILL.md` (Sửa đổi)
   - `.agents/skills/lc-skill-docker-setup/SKILL.md` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "docs(rules): purge all legacy OCR references from agent guidelines"`
+
+### [2026-08-20 22:23] Cập nhật tên dự án trong luật Docker Deployment
+- **Mô tả**: Sửa tên dự án từ `lichcongtac` (dự án cũ) thành `lichcongtacvp` trong file luật deploy để đồng nhất và tránh gây nhầm lẫn khi AI đọc file.
+- **Tệp thay đổi**:
+  - `.agents/rules/lc-rule-docker-deployment.md` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "docs(rules): fix project name reference in docker deployment rule"`

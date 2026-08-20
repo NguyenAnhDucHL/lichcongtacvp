@@ -7,12 +7,12 @@ Quy tắc này nhằm ngăn chặn các lỗi nghiêm trọng khi triển khai (
 - Hậu quả: Container `nginx-proxy` chung của server khởi động lại và vướng lỗi phân giải `host.docker.internal`, dẫn đến crash loop làm sập toàn bộ hệ thống routing trên server.
 
 ## 2. Quy Tắc Bắt Buộc (Zero Tolerance)
-AI Agent **TUYỆT ĐỐI TUÂN THỦ** các quy định sau khi viết script deploy hoặc chạy lệnh Docker Compose liên quan đến dự án `lichcongtac`:
+AI Agent **TUYỆT ĐỐI TUÂN THỦ** các quy định sau khi viết script deploy hoặc chạy lệnh Docker Compose liên quan đến dự án `lichcongtacvp`:
 
 1. **Luôn chỉ định tường minh Project Name (`-p`)**:
-   Mọi lệnh `docker compose` (hoặc `docker-compose`) được thực thi trên server hoặc ghi vào shell script **BẮT BUỘC** phải đính kèm cờ `-p lichcongtac`.
-   - **✅ ĐÚNG**: `docker compose -p lichcongtac down`
-   - **✅ ĐÚNG**: `docker compose -p lichcongtac up -d`
+   Mọi lệnh `docker compose` (hoặc `docker-compose`) được thực thi trên server hoặc ghi vào shell script **BẮT BUỘC** phải đính kèm cờ `-p lichcongtacvp`.
+   - **✅ ĐÚNG**: `docker compose -p lichcongtacvp down`
+   - **✅ ĐÚNG**: `docker compose -p lichcongtacvp up -d`
    - **❌ SAI (BỊ CẤM)**: `docker-compose down`
    - **❌ SAI (BỊ CẤM)**: `docker compose up -d`
 
@@ -20,7 +20,7 @@ AI Agent **TUYỆT ĐỐI TUÂN THỦ** các quy định sau khi viết script d
    Nên dùng cú pháp `docker compose` thay vì phiên bản cũ `docker-compose`.
 
 3. **Bảo vệ Vùng Cấm Trên Server**:
-   Dự án Lịch Công Tác (`/root/lichcongtac`) chỉ là một dịch vụ thành phần trên server. **Tuyệt đối không** thao tác (restart, stop, rm) vào các container độc lập khác trên server như `nginx-proxy`, `doc-coordination-system`, `doc-clamav`, `rabbitmq`.
+   Dự án Lịch Công Tác Văn Phòng (`/root/lichcongtacvp`) chỉ là một dịch vụ thành phần trên server. **Tuyệt đối không** thao tác (restart, stop, rm) vào các container độc lập khác trên server như `nginx-proxy`, `doc-coordination-system`, `doc-clamav`, `rabbitmq`.
 
 ---
 **Status:** ACTIVE  
