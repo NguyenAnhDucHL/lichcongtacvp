@@ -1,3 +1,8 @@
+### [2026-08-21 01:40] Sửa lỗi viền trắng trên AdminHeader khi dùng mobile
+- **Mô tả**: Thay class `border-white` bằng `md:border-white` trong `AdminHeader.jsx` để tránh việc mục menu đang active bị viền trắng chen ngang trên giao diện điện thoại.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/src/components/AdminHeader.jsx` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "style(ui): fix white border on mobile active menu item in AdminHeader"`
 ### [2026-08-21 01:05] Sửa lỗi giao diện Responsive Mobile cho bảng dữ liệu
 - **Mô tả**: Chuyển đổi toàn bộ bảng lịch công tác (ở trang Tìm kiếm và trang Quản trị) sang định dạng Card Responsive trên các thiết bị Mobile để loại bỏ thanh cuộn ngang (horizontal scroll), giúp người dùng xem thông tin thuận tiện trên một view duy nhất.
 - **Tệp thay đổi**:
