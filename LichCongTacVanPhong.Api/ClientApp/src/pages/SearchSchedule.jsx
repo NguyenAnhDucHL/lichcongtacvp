@@ -246,20 +246,20 @@ export default function SearchSchedule() {
                 </select>
               </div>
             </div>
-            <div className="w-full overflow-x-hidden">
-              <table className="w-full border-collapse border-t border-gray-300 text-[15px]">
+            <div className="w-full">
+              <table className="w-full table-fixed border-collapse border-t border-gray-300 text-[15px] break-words">
                 <thead>
                   <tr className="bg-[#fce8d5]">
-                    <th className="border border-gray-300 py-2 px-2 md:px-3 font-bold w-10 md:w-12 text-center text-sm md:text-base">
-                      STT
+                    <th className="border border-gray-300 py-2 px-1 md:px-3 font-bold w-[10%] md:w-12 text-center text-[12px] md:text-base">
+                      TT
                     </th>
-                    <th className="border border-gray-300 py-2 px-2 md:px-3 font-bold w-20 md:w-28 text-center text-sm md:text-base">
+                    <th className="border border-gray-300 py-2 px-1 md:px-3 font-bold w-[25%] md:w-28 text-center text-[13px] md:text-base">
                       Ngày
                     </th>
-                    <th className="border border-gray-300 py-2 px-2 md:px-3 font-bold text-center text-sm md:text-base">
+                    <th className="border border-gray-300 py-2 px-1 md:px-3 font-bold w-[45%] text-center text-[13px] md:text-base">
                       Nội dung
                     </th>
-                    <th className="border border-gray-300 py-2 px-2 md:px-3 font-bold w-20 md:w-28 text-center text-sm md:text-base">
+                    <th className="border border-gray-300 py-2 px-1 md:px-3 font-bold w-[20%] md:w-28 text-center text-[13px] md:text-base">
                       Phòng, ban
                     </th>
                   </tr>
@@ -270,14 +270,14 @@ export default function SearchSchedule() {
                       const di = formatDateDisplay(item.date)
                       return (
                         <tr key={item.id} className="border border-gray-300 hover:bg-gray-50 bg-white">
-                          <td className="border-b border-gray-300 py-2.5 px-2 md:px-3 text-center text-sm md:text-base">
+                          <td className="border-b border-gray-300 py-2.5 px-1 md:px-3 text-center text-[13px] md:text-base">
                             <span className="font-bold">{(currentPage - 1) * pageSize + index + 1}</span>
                           </td>
-                          <td className="border-b border-gray-300 py-2.5 px-2 md:px-3 text-center leading-tight text-sm md:text-base">
+                          <td className="border-b border-gray-300 py-2.5 px-1 md:px-3 text-center leading-tight text-[13px] md:text-base">
                             <span className="block">{di.dayName}</span>
                             <span className="block text-[#1d5792] font-bold">{di.date}</span>
                           </td>
-                          <td className="border-b border-gray-300 py-2.5 px-2 md:px-3 text-sm md:text-base">
+                          <td className="border-b border-gray-300 py-2.5 px-1 md:px-3 text-[13px] md:text-base text-justify">
                             <div className="w-full">
                               {item.startTime?.trim() && (
                                 <span className="text-[#c8102e] font-bold mr-2">
@@ -299,7 +299,7 @@ export default function SearchSchedule() {
                               )}
                             </div>
                           </td>
-                          <td className="border-b border-gray-300 py-2.5 px-2 md:px-3 text-center text-sm md:text-base">
+                          <td className="border-b border-gray-300 py-2.5 px-1 md:px-3 text-center text-[11px] md:text-base">
                             {extractText(item.preparingUnit) || 'CƠ QUAN'}
                           </td>
                         </tr>
