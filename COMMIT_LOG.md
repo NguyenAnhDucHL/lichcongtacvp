@@ -1,3 +1,8 @@
+### [2026-08-22 09:57] Fix mobile layout trang SearchSchedule — chuyển sang card layout thay vì bảng
+- **Mô tả**: Trên mobile, bảng 4 cột bị tràn ngang buộc người dùng kéo qua lại. Giải pháp: ẩn bảng trên mobile (`hidden md:table`), thêm card layout riêng dạng danh sách (`md:hidden`) gồm dòng ngày + nội dung + phòng ban theo chiều dọc, tận dụng toàn bộ chiều rộng màn hình, không cần scroll ngang.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/src/pages/SearchSchedule.jsx` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "style(search): chuyển kết quả tìm kiếm sang card layout trên mobile, bỏ scroll ngang"`
 ### [2026-08-21 01:48] Sửa lỗi text đè lên logo banner trên mobile
 - **Mô tả**: Tăng padding left (từ 90px lên 100px) cho text header trong `AdminHeader.jsx` và `PublicLayout.jsx` trên mobile để tránh việc text bị sát và đè lên hình tròn của logo banner bên trái.
 - **Tệp thay đổi**:
