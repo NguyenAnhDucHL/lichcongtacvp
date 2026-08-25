@@ -1,3 +1,13 @@
+### [2026-08-25 11:55] Khôi phục icon app trên iOS bằng cách sử dụng kích thước ảnh chuẩn
+- **Mô tả**: Ảnh `quoc_huy.png` có kích thước quá lớn (7MB) và không vuông (3200x3253) nên iOS tự động bỏ qua khi thêm web vào màn hình chính (Add to Home Screen). Đã dùng `sips` để resize ảnh thành các kích thước chuẩn 180x180 (`apple-touch-icon.png`), 192x192, 512x512 và cập nhật lại đường dẫn trong `index.html` và `manifest.json`.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/public/assets/apple-touch-icon.png` (Mới)
+  - `LichCongTacVanPhong.Api/ClientApp/public/assets/icon-192.png` (Mới)
+  - `LichCongTacVanPhong.Api/ClientApp/public/assets/icon-512.png` (Mới)
+  - `LichCongTacVanPhong.Api/ClientApp/index.html` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/public/manifest.json` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "fix(ui): resize and fix apple-touch-icon and PWA icons for iOS compatibility"`
+
 ### [2026-08-22 09:57] Fix mobile layout trang SearchSchedule — chuyển sang card layout thay vì bảng
 - **Mô tả**: Trên mobile, bảng 4 cột bị tràn ngang buộc người dùng kéo qua lại. Giải pháp: ẩn bảng trên mobile (`hidden md:table`), thêm card layout riêng dạng danh sách (`md:hidden`) gồm dòng ngày + nội dung + phòng ban theo chiều dọc, tận dụng toàn bộ chiều rộng màn hình, không cần scroll ngang.
 - **Tệp thay đổi**:
