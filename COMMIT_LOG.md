@@ -1,3 +1,9 @@
+### [2026-08-25 11:57] Ghi chép bài học xương máu về lỗi PWA Icon trên iOS
+- **Mô tả**: Viết tài liệu lưu lại bài học xương máu liên quan đến việc cấu hình Web Icon trên iOS và cách thức hoạt động của `apple-touch-icon`, cảnh báo về kích thước và dung lượng (để tránh lỗi load chậm và mất logo).
+- **Tệp thay đổi**:
+  - `docs/bai_hoc_xuong_mau_ios_icon.md` (Mới)
+- **Lệnh git commit**: `git commit -m "docs: thêm ghi chép bài học xương máu về lỗi PWA Icon trên iOS"`
+
 ### [2026-08-25 11:55] Khôi phục icon app trên iOS bằng cách sử dụng kích thước ảnh chuẩn
 - **Mô tả**: Ảnh `quoc_huy.png` có kích thước quá lớn (7MB) và không vuông (3200x3253) nên iOS tự động bỏ qua khi thêm web vào màn hình chính (Add to Home Screen). Đã dùng `sips` để resize ảnh thành các kích thước chuẩn 180x180 (`apple-touch-icon.png`), 192x192, 512x512 và cập nhật lại đường dẫn trong `index.html` và `manifest.json`.
 - **Tệp thay đổi**:
