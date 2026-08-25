@@ -1677,3 +1677,9 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
 - **Tệp thay đổi**:
   - `LichCongTacVanPhong.Api/ClientApp/src/shared/components/PublicLayout.jsx` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "style(ui): fix white border on mobile active menu item"`
+### [2026-08-25 10:20] Xóa fallback truy vấn 1000 bản ghi lịch công tác
+- **Mô tả**: Bỏ cơ chế `GetAllAsync` mặc định ở endpoint `GetPublicSchedules` để ép các client bắt buộc truyền ngày tháng, ngăn chặn query quá tải DB.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/Controllers/SchedulesController.cs` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/src/pages/WorkSchedule.jsx` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "refactor(api): bắt buộc truyền startDate và endDate khi lấy lịch công khai"`

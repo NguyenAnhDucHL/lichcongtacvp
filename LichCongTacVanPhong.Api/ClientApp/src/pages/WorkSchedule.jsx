@@ -164,7 +164,13 @@ export default function WorkSchedule() {
     let scheduleOk = false
     try {
       if (isMountedRef.current) setError(null)
-      const raw = await scheduleService.getPublicSchedule()
+
+      const todayStr = getTodayStr()
+      const maxDate = new Date(todayStr + 'T00:00:00')
+      maxDate.setDate(maxDate.getDate() + 7)
+      const maxStr = `${maxDate.getFullYear()}-${String(maxDate.getMonth() + 1).padStart(2, '0')}-${String(maxDate.getDate()).padStart(2, '0')}`
+
+      const raw = await scheduleService.getPublicSchedule({ startDate: todayStr, endDate: maxStr })
 
       // Chỉ cập nhật state nếu đây là fetch MỚI NHẤT (bỏ qua response lỗi thời)
       if (fetchIdRef.current !== currentId) {
