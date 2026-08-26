@@ -1719,3 +1719,13 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
   - `LichCongTacVanPhong.Core/Data/Repositories/AdminRepository.cs` (Sửa đổi)
   - `LichCongTacVanPhong.Api/Controllers/AdminController.cs` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "refactor(admin): chuyển đổi AdminController và AdminRepository sang bất đồng bộ async/await"`
+
+### [2026-08-26 12:05] Sửa lỗi giao diện trắng lịch và DB Lock khi tải lại trang liên tục
+- **Mô tả**: Bỏ `Pooling=False` ở các repository (chuyển sang `Pooling=True`) để mở lại Connection Pooling cho SQLite, giúp giảm tải đụng độ mở file khi có nhiều request đồng thời. Sửa lỗi logic ở `WorkSchedule.jsx` (không `setLoading(false)` nếu đang trong quá trình thử lại API sau khi gặp lỗi) để ngăn chặn màn hình bị trắng tinh.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/src/pages/WorkSchedule.jsx` (Sửa đổi)
+  - `LichCongTacVanPhong.Core/Data/Repositories/AdminRepository.cs` (Sửa đổi)
+  - `LichCongTacVanPhong.Core/Data/Repositories/DepartmentRepository.cs` (Sửa đổi)
+  - `LichCongTacVanPhong.Core/Data/Repositories/ScheduleRepository.cs` (Sửa đổi)
+  - `LichCongTacVanPhong.Core/Data/Repositories/UserRepository.cs` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "fix(db): enable connection pooling and fix frontend blank screen retry bug"`

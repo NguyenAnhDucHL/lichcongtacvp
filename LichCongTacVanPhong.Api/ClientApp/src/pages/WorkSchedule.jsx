@@ -193,14 +193,16 @@ export default function WorkSchedule() {
         setTimeout(() => {
           if (isMountedRef.current) fetchData(retryCount + 1)
         }, delay)
+        return // Tránh chạy xuống code cleanup nếu đang retry
       } else {
         if (isMountedRef.current) setError('Đang mất kết nối máy chủ, vui lòng thử lại sau...')
       }
-    } finally {
-      if (isMountedRef.current) setLoading(false)
-      // Giải phóng lock chỉ khi đây là fetch hiện tại (không giải phóng nếu đã có fetch mới hơn)
-      if (fetchIdRef.current === currentId) isFetchingRef.current = false
     }
+
+    // Cleanup khi đã xong hoàn toàn (thành công hoặc hết số lần retry)
+    if (isMountedRef.current) setLoading(false)
+    // Giải phóng lock chỉ khi đây là fetch hiện tại (không giải phóng nếu đã có fetch mới hơn)
+    if (fetchIdRef.current === currentId) isFetchingRef.current = false
 
     // Chỉ fetch notification/holiday khi lịch chính thành công — tránh gọi API thừa khi lỗi
     if (!scheduleOk) return

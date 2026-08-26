@@ -20,11 +20,11 @@ namespace LichCongTacVanPhong.Core.Data.Repositories
             else
             {
                 string? envPath = Environment.GetEnvironmentVariable("DB_PATH");
-                if (!string.IsNullOrEmpty(envPath)) { _connectionString = $"Data Source={envPath};Pooling=False;Default Timeout=30"; }
+                if (!string.IsNullOrEmpty(envPath)) { _connectionString = $"Data Source={envPath};Pooling=True;Default Timeout=30"; }
                 else
                 {
                     string appData = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "LichCongTacVanPhong");
-                    _connectionString = $"Data Source={Path.Combine(appData, "documents.db")};Pooling=False;Default Timeout=30";
+                    _connectionString = $"Data Source={Path.Combine(appData, "documents.db")};Pooling=True;Default Timeout=30";
                 }
             }
         }

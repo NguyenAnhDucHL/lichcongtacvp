@@ -35,7 +35,7 @@ namespace LichCongTacVanPhong.Core.Data.Repositories
                     );
                     dbPath = Path.Combine(appData, "documents.db");
                 }
-                _connectionString = $"Data Source={dbPath};Pooling=False;Default Timeout=30";
+                _connectionString = $"Data Source={dbPath};Pooling=True;Default Timeout=30";
             }
         }
 
