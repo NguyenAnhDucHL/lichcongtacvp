@@ -32,15 +32,15 @@ namespace LichCongTacVanPhong.Data
             using var connection = new SqliteConnection(_connectionString);
             connection.Open();
 
-            // Sử dụng DELETE thay vì WAL vì WAL bị lỗi "disk I/O error" trên Docker Desktop Windows
+            // Kích hoạt WAL mode theo yêu cầu để tăng tốc độ truy cập đồng thời
             try 
             {
-                using var walCmd = new SqliteCommand("PRAGMA journal_mode=DELETE; PRAGMA synchronous=NORMAL; PRAGMA busy_timeout=5000;", connection);
+                using var walCmd = new SqliteCommand("PRAGMA journal_mode=WAL; PRAGMA synchronous=NORMAL; PRAGMA busy_timeout=5000;", connection);
                 walCmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[DB Warning] Could not set DELETE mode: {ex.Message}");
+                Console.WriteLine($"[DB Warning] Could not set WAL mode: {ex.Message}");
             }
 
             string createSchedulesTable = @"

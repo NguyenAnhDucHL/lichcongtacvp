@@ -1,3 +1,10 @@
+### [2026-08-26 12:15] Kích hoạt WAL mode và hoàn tất kiểm tra connection pooling
+- **Mô tả**: Theo yêu cầu, kiểm tra toàn bộ source code để đảm bảo Pooling=True đã được bật đồng bộ trên mọi Repositories (đã sửa `NotificationRepository.cs`). Đồng thời, thay đổi `PRAGMA journal_mode=DELETE` thành `WAL` trong `DatabaseService.cs` để tối đa hóa hiệu năng truy cập đồng thời của SQLite.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Core/Data/Repositories/NotificationRepository.cs` (Sửa đổi)
+  - `LichCongTacVanPhong.Core/Data/DatabaseService.cs` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "perf(db): bật WAL mode và đồng bộ pooling toàn bộ repositories"`
+
 ### [2026-08-25 11:57] Ghi chép bài học xương máu về lỗi PWA Icon trên iOS
 - **Mô tả**: Viết tài liệu lưu lại bài học xương máu liên quan đến việc cấu hình Web Icon trên iOS và cách thức hoạt động của `apple-touch-icon`, cảnh báo về kích thước và dung lượng (để tránh lỗi load chậm và mất logo).
 - **Tệp thay đổi**:
