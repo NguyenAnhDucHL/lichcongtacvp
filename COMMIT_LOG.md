@@ -1699,3 +1699,23 @@ Tệp này lưu trữ lịch sử các thay đổi và tính năng mới đượ
   - `LichCongTacVanPhong.Api/Controllers/SchedulesController.cs` (Sửa đổi)
   - `LichCongTacVanPhong.Api/ClientApp/src/pages/WorkSchedule.jsx` (Sửa đổi)
 - **Lệnh git commit**: `git commit -m "refactor(api): bắt buộc truyền startDate và endDate khi lấy lịch công khai"`
+
+### [2026-08-26 11:30] Refactor sang Async/Await cho Users, Departments và Auth (Phần 2)
+- **Mô tả**: Tiếp tục quá trình refactor database access sang bất đồng bộ hoàn toàn theo yêu cầu của user để tránh chặn thread pool trong ASP.NET Core. Chuyển đổi các phương thức trong `DepartmentRepository`, `DepartmentsController`, `UserRepository`, `UsersController` và `AuthController` sang sử dụng `async Task` và `await`.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Core/Data/Interfaces/IUserRepository.cs` (Sửa đổi)
+  - `LichCongTacVanPhong.Core/Data/Repositories/UserRepository.cs` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/Controllers/UsersController.cs` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/Controllers/AuthController.cs` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/Controllers/DepartmentsController.cs` (Sửa đổi)
+  - `LichCongTacVanPhong.Core/Data/Interfaces/IDepartmentRepository.cs` (Sửa đổi)
+  - `LichCongTacVanPhong.Core/Data/Repositories/DepartmentRepository.cs` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "refactor(api): chuyển đổi toàn bộ data access layer sang async await"`
+
+### [2026-08-26 11:00] Refactor sang Async/Await cho Admin (Phần 1)
+- **Mô tả**: Sửa technical debt từ bản cũ. Refactor toàn bộ `IAdminRepository`, `AdminRepository` và `AdminController` sang sử dụng `async/await` để không block Thread Pool, tăng tính Scalability cho hệ thống.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Core/Data/Interfaces/IAdminRepository.cs` (Sửa đổi)
+  - `LichCongTacVanPhong.Core/Data/Repositories/AdminRepository.cs` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/Controllers/AdminController.cs` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "refactor(admin): chuyển đổi AdminController và AdminRepository sang bất đồng bộ async/await"`

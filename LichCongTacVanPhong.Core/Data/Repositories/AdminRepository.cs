@@ -5,6 +5,7 @@ using LichCongTacVanPhong.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace LichCongTacVanPhong.Core.Data.Repositories
 {
@@ -28,15 +29,15 @@ namespace LichCongTacVanPhong.Core.Data.Repositories
             }
         }
 
-        public List<Department> GetDepartments()
+        public async Task<List<Department>> GetDepartmentsAsync()
         {
             var list = new List<Department>();
             using var connection = new SqliteConnection(_connectionString);
-            connection.Open();
+            await connection.OpenAsync();
             string sql = "SELECT Id, Name, Description, IsActive FROM Departments";
             using var cmd = new SqliteCommand(sql, connection);
-            using var reader = cmd.ExecuteReader();
-            while (reader.Read())
+            using var reader = await cmd.ExecuteReaderAsync();
+            while (await reader.ReadAsync())
             {
                 list.Add(new Department
                 {
@@ -49,36 +50,36 @@ namespace LichCongTacVanPhong.Core.Data.Repositories
             return list;
         }
 
-        public int InsertDepartment(Department d)
+        public async Task<int> InsertDepartmentAsync(Department d)
         {
             using var connection = new SqliteConnection(_connectionString);
-            connection.Open();
+            await connection.OpenAsync();
             using var cmd = new SqliteCommand("INSERT INTO Departments (Name, Description, IsActive) VALUES (@n, @d, @ia); SELECT last_insert_rowid();", connection);
             cmd.Parameters.AddWithValue("@n", d.Name);
             cmd.Parameters.AddWithValue("@d", d.Description);
             cmd.Parameters.AddWithValue("@ia", d.IsActive ? 1 : 0);
-            return Convert.ToInt32(cmd.ExecuteScalar());
+            return Convert.ToInt32(await cmd.ExecuteScalarAsync());
         }
 
-        public void UpdateDepartment(Department d)
+        public async Task UpdateDepartmentAsync(Department d)
         {
             using var connection = new SqliteConnection(_connectionString);
-            connection.Open();
+            await connection.OpenAsync();
             using var cmd = new SqliteCommand("UPDATE Departments SET Name = @n, Description = @d, IsActive = @ia WHERE Id = @id", connection);
             cmd.Parameters.AddWithValue("@n", d.Name);
             cmd.Parameters.AddWithValue("@d", d.Description);
             cmd.Parameters.AddWithValue("@ia", d.IsActive ? 1 : 0);
             cmd.Parameters.AddWithValue("@id", d.Id);
-            cmd.ExecuteNonQuery();
+            await cmd.ExecuteNonQueryAsync();
         }
 
-        public void DeleteDepartment(int id)
+        public async Task DeleteDepartmentAsync(int id)
         {
             using var connection = new SqliteConnection(_connectionString);
-            connection.Open();
+            await connection.OpenAsync();
             using var cmd = new SqliteCommand("UPDATE Departments SET IsActive = 0 WHERE Id = @id", connection);
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.ExecuteNonQuery();
+            await cmd.ExecuteNonQueryAsync();
         }
     }
 }
