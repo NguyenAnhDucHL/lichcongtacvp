@@ -17,7 +17,7 @@ export default function AdminHeader() {
     const toastId = toast.loading('Đang đăng xuất...')
     setTimeout(() => {
       logout()
-      navigate('/campha/manager/login')
+      navigate('/lichcongtachdnd/manager/login')
       toast.success('Hẹn gặp lại!', { id: toastId })
     }, 1000)
   }
@@ -29,9 +29,9 @@ export default function AdminHeader() {
 
   const isAdminActive = () => {
     return [
-      '/campha/manager/accounts',
-      '/campha/manager/departments',
-      '/campha/manager/employees',
+      '/lichcongtachdnd/manager/accounts',
+      '/lichcongtachdnd/manager/departments',
+      '/lichcongtachdnd/manager/employees',
     ].some((p) => currentPath === p || currentPath === p + '/')
   }
 
@@ -39,16 +39,16 @@ export default function AdminHeader() {
     {
       label: 'QUẢN TRỊ',
       subItems: [
-        { label: 'Quản trị tài khoản', href: '/campha/manager/accounts' },
-        { label: 'Quản trị phòng ban', href: '/campha/manager/departments' },
-        { label: 'Quản trị nhân viên', href: '/campha/manager/employees' },
+        { label: 'Quản trị tài khoản', href: '/lichcongtachdnd/manager/accounts' },
+        { label: 'Quản trị phòng ban', href: '/lichcongtachdnd/manager/departments' },
+        { label: 'Quản trị nhân viên', href: '/lichcongtachdnd/manager/employees' },
       ],
     },
-    { label: 'LỊCH CÔNG TÁC HĐND', href: '/campha/' },
-    { label: 'QUẢN TRỊ LỊCH', href: '/campha/manager/schedules' },
-    { label: 'THÔNG BÁO', href: '/campha/manager/notifications' },
-    { label: 'NGÀY LỄ', href: '/campha/manager/holidays' },
-    { label: 'ĐỔI MẬT KHẨU', href: '/campha/manager/change-password' },
+    { label: 'LỊCH CÔNG TÁC HĐND', href: '/lichcongtachdnd/' },
+    { label: 'QUẢN TRỊ LỊCH', href: '/lichcongtachdnd/manager/schedules' },
+    { label: 'THÔNG BÁO', href: '/lichcongtachdnd/manager/notifications' },
+    { label: 'NGÀY LỄ', href: '/lichcongtachdnd/manager/holidays' },
+    { label: 'ĐỔI MẬT KHẨU', href: '/lichcongtachdnd/manager/change-password' },
     { label: 'ĐĂNG XUẤT', href: null, onClick: handleLogout },
   ]
 

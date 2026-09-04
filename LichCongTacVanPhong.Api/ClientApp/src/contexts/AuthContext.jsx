@@ -56,8 +56,8 @@ export const AuthProvider = ({ children }) => {
       // Nếu người dùng đang thực sự làm việc trong trang Admin (không phải lần đầu vào)
       // → hiện Modal tại chỗ để không mất form data đang nhập
       const isInsideAdmin =
-        window.location.pathname.startsWith('/campha/manager') &&
-        !window.location.pathname.includes('/campha/manager/login')
+        window.location.pathname.startsWith('/lichcongtachdnd/manager') &&
+        !window.location.pathname.includes('/lichcongtachdnd/manager/login')
 
       if (isInsideAdmin) {
         // Đang làm việc dở → hiện modal để đăng nhập lại không mất dữ liệu
@@ -74,7 +74,7 @@ export const AuthProvider = ({ children }) => {
         setToken(null)
         setUser(null)
         toast.info('Phiên làm việc đã hết hạn, vui lòng đăng nhập lại.')
-        window.location.href = '/campha/manager/login'
+        window.location.href = '/lichcongtachdnd/manager/login'
       }
     }
     document.addEventListener('auth:unauthorized', handleUnauthorized)
@@ -150,7 +150,7 @@ export const AuthProvider = ({ children }) => {
                 setShowExpiredModal(false)
                 logout()
                 document.dispatchEvent(new CustomEvent('auth:login_cancel'))
-                window.location.href = '/campha/manager/login?reason=expired'
+                window.location.href = '/lichcongtachdnd/manager/login?reason=expired'
               }}
               className="absolute right-4 top-4 text-gray-400 hover:text-gray-600"
             >

@@ -24,7 +24,7 @@ export default function AdminChangePassword() {
     localStorage.removeItem('user_name')
     localStorage.removeItem('user_role')
     logout()
-    navigate('/campha/manager/login', { replace: true })
+    navigate('/lichcongtachdnd/manager/login', { replace: true })
   }
 
   const handleSubmit = async (e) => {

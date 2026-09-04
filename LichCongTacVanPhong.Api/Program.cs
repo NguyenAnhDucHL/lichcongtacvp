@@ -274,7 +274,7 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-app.UsePathBase("/campha");
+app.UsePathBase("/lichcongtachdnd");
 
 app.Use(async (context, next) =>
 {
