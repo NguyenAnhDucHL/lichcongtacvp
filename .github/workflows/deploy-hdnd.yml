@@ -37,7 +37,7 @@ jobs:
             mkdir -p /root/lichcongtachdnd
             cd /root/lichcongtachdnd
             tar -xzf /root/deploy-hdnd.tar.gz
-            docker compose -p lichcongtachdnd up -d --build
+            docker compose -f docker-compose.hdnd.yml -p lichcongtachdnd up -d --build
             docker image prune -f || true
             rm -f /root/deploy-hdnd.tar.gz
             
@@ -63,7 +63,7 @@ jobs:
                 ssl_ciphers HIGH:!aNULL:!MD5;
 
                 location / {
-                    proxy_pass http://host.docker.internal:8082;
+                    proxy_pass http://host.docker.internal:8083;
                     proxy_set_header Host $host;
                     proxy_set_header X-Real-IP $remote_addr;
                     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -71,7 +71,7 @@ jobs:
                 }
 
                 location /appHub {
-                    proxy_pass http://host.docker.internal:8082;
+                    proxy_pass http://host.docker.internal:8083;
                     proxy_http_version 1.1;
                     proxy_set_header Upgrade $http_upgrade;
                     proxy_set_header Connection "Upgrade";
