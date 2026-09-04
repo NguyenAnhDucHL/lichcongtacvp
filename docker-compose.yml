@@ -4,11 +4,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: lichcongtacvp-backend
+    container_name: lichcongtachdnd-backend
     expose:
       - "5000"
     ports:
-      - "8081:5000"
+      - "8082:5000"
     deploy:
       resources:
         limits:
