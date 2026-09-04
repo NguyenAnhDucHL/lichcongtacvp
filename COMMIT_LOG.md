@@ -1,3 +1,9 @@
+### [2026-09-04 10:46] Thêm tự động cấu hình Nginx cho subdomain HĐND
+- **Mô tả**: Bổ sung kịch bản tạo file cấu hình Nginx (`lichcongtachdnd.conf`) và tự động reload Nginx vào luồng CI/CD `deploy-hdnd.yml`. Điều này giúp khắc phục lỗi trỏ nhầm sang port của Hệ thống theo dõi văn bản khi truy cập tên miền `lichcongtachdnd.vpdtcampha.vn`.
+- **Tệp thay đổi**:
+  - `.github/workflows/deploy-hdnd.yml` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "fix(infra): tự động cấu hình Nginx cho subdomain lichcongtachdnd để trỏ đúng port 8082"`
+
 ### [2026-09-04 10:43] Sửa lại base path cho cấu hình Subdomain mới
 - **Mô tả**: Thay vì chạy trên subpath `/lichcongtachdnd/`, hệ thống mới yêu cầu triển khai trên subdomain độc lập `https://lichcongtachdnd.vpdtcampha.vn/`. Do đó, cập nhật lại toàn bộ Vite Base Path, ASP.NET Core PathBase và React Router về root path `/` để hệ thống hoạt động đúng trên tên miền mới.
 - **Tệp thay đổi**:
