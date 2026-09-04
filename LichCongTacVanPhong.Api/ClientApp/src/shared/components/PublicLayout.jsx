@@ -49,7 +49,7 @@ export function PublicLayout({ children, activeHref, todayHoliday }) {
             LỊCH CÔNG TÁC
           </h1>
           <h1 className="text-[13px] sm:text-[15px] md:text-[18px] font-bold text-[#c8102e] uppercase m-0 leading-tight tracking-wide mt-1">
-            VĂN PHÒNG PHƯỜNG CẨM PHẢ
+            HĐND PHƯỜNG CẨM PHẢ
           </h1>
         </div>
       </div>
