@@ -106,7 +106,7 @@ function RequireAuth({ children }) {
   const { token, loading } = useAuth()
   if (loading) return null
   if (!token) {
-    return <Navigate to="/lichcongtachdnd/manager/login" replace />
+    return <Navigate to="/manager/login" replace />
   }
   return children
 }
@@ -115,29 +115,29 @@ function RequireAdmin({ children }) {
   const { token, user, loading } = useAuth()
   if (loading) return null
   if (!token) {
-    return <Navigate to="/lichcongtachdnd/manager/login" replace />
+    return <Navigate to="/manager/login" replace />
   }
   if (user?.role !== 'Admin') {
-    return <Navigate to="/lichcongtachdnd/manager/change-password" replace />
+    return <Navigate to="/manager/change-password" replace />
   }
   return children
 }
 
 const router = createBrowserRouter([
   {
-    path: '/lichcongtachdnd/',
+    path: '/',
     element: <WorkSchedule />,
   },
   {
-    path: '/lichcongtachdnd/search',
+    path: '/search',
     element: <SearchSchedule />,
   },
   {
-    path: '/lichcongtachdnd/manager/login',
+    path: '/manager/login',
     element: <AdminLogin />,
   },
   {
-    path: '/lichcongtachdnd/manager',
+    path: '/manager',
     element: (
       <RequireAuth>
         <Outlet />
@@ -198,13 +198,13 @@ const router = createBrowserRouter([
       },
       {
         path: '*',
-        element: <Navigate to="/lichcongtachdnd/manager/schedules" replace />,
+        element: <Navigate to="/manager/schedules" replace />,
       },
     ],
   },
   {
     path: '*',
-    element: <Navigate to="/lichcongtachdnd/" replace />,
+    element: <Navigate to="/" replace />,
   },
 ])
 

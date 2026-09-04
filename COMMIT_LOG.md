@@ -1,3 +1,11 @@
+### [2026-09-04 10:43] Sửa lại base path cho cấu hình Subdomain mới
+- **Mô tả**: Thay vì chạy trên subpath `/lichcongtachdnd/`, hệ thống mới yêu cầu triển khai trên subdomain độc lập `https://lichcongtachdnd.vpdtcampha.vn/`. Do đó, cập nhật lại toàn bộ Vite Base Path, ASP.NET Core PathBase và React Router về root path `/` để hệ thống hoạt động đúng trên tên miền mới.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/Program.cs` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/vite.config.js` (Sửa đổi)
+  - Các file React component và `index.html` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "fix(routing): chuyển base path về root cho subdomain lichcongtachdnd.vpdtcampha.vn"`
+
 ### [2026-09-04 10:22] Thêm GitHub Action tự động deploy nhánh hdnd
 - **Mô tả**: Tạo luồng CI/CD riêng để tự động deploy code từ nhánh `hdnd` lên thư mục `/root/lichcongtachdnd` trên server VNPT mỗi khi có thay đổi được đẩy lên nhánh này. Điều này giúp chạy song song với hệ thống Văn phòng mà không ghi đè mã nguồn.
 - **Tệp thay đổi**:

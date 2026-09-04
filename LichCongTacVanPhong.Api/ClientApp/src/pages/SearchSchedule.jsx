@@ -114,7 +114,7 @@ export default function SearchSchedule() {
     }, [])
 
   return (
-    <PublicLayout activeHref="/lichcongtachdnd/search" todayHoliday={todayHoliday}>
+    <PublicLayout activeHref="/search" todayHoliday={todayHoliday}>
       <main className="max-w-6xl mx-auto px-4 py-6 text-[16px]">
         {/* Search box */}
         <div className="bg-transparent p-0 mb-6 mt-2">

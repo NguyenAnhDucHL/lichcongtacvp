@@ -17,7 +17,7 @@ export default function AdminHeader() {
     const toastId = toast.loading('Đang đăng xuất...')
     setTimeout(() => {
       logout()
-      navigate('/lichcongtachdnd/manager/login')
+      navigate('/manager/login')
       toast.success('Hẹn gặp lại!', { id: toastId })
     }, 1000)
   }
@@ -29,9 +29,9 @@ export default function AdminHeader() {
 
   const isAdminActive = () => {
     return [
-      '/lichcongtachdnd/manager/accounts',
-      '/lichcongtachdnd/manager/departments',
-      '/lichcongtachdnd/manager/employees',
+      '/manager/accounts',
+      '/manager/departments',
+      '/manager/employees',
     ].some((p) => currentPath === p || currentPath === p + '/')
   }
 
@@ -39,16 +39,16 @@ export default function AdminHeader() {
     {
       label: 'QUẢN TRỊ',
       subItems: [
-        { label: 'Quản trị tài khoản', href: '/lichcongtachdnd/manager/accounts' },
-        { label: 'Quản trị phòng ban', href: '/lichcongtachdnd/manager/departments' },
-        { label: 'Quản trị nhân viên', href: '/lichcongtachdnd/manager/employees' },
+        { label: 'Quản trị tài khoản', href: '/manager/accounts' },
+        { label: 'Quản trị phòng ban', href: '/manager/departments' },
+        { label: 'Quản trị nhân viên', href: '/manager/employees' },
       ],
     },
-    { label: 'LỊCH CÔNG TÁC HĐND', href: '/lichcongtachdnd/' },
-    { label: 'QUẢN TRỊ LỊCH', href: '/lichcongtachdnd/manager/schedules' },
-    { label: 'THÔNG BÁO', href: '/lichcongtachdnd/manager/notifications' },
-    { label: 'NGÀY LỄ', href: '/lichcongtachdnd/manager/holidays' },
-    { label: 'ĐỔI MẬT KHẨU', href: '/lichcongtachdnd/manager/change-password' },
+    { label: 'LỊCH CÔNG TÁC HĐND', href: '/' },
+    { label: 'QUẢN TRỊ LỊCH', href: '/manager/schedules' },
+    { label: 'THÔNG BÁO', href: '/manager/notifications' },
+    { label: 'NGÀY LỄ', href: '/manager/holidays' },
+    { label: 'ĐỔI MẬT KHẨU', href: '/manager/change-password' },
     { label: 'ĐĂNG XUẤT', href: null, onClick: handleLogout },
   ]
 

@@ -274,7 +274,7 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-app.UsePathBase("/lichcongtachdnd");
+app.UsePathBase("");
 
 app.Use(async (context, next) =>
 {
