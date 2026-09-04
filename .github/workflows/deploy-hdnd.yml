@@ -1,0 +1,42 @@
+name: Deploy HĐND to VNPT Cloud
+
+on:
+  push:
+    branches:
+      - hdnd
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create deployment package
+        run: |
+          export COPYFILE_DISABLE=1
+          tar --exclude='.git' --exclude='node_modules' --exclude='bin' --exclude='obj' --exclude='.env' --exclude='data_dump' --exclude='._*' -czf /tmp/deploy-hdnd.tar.gz .
+          mv /tmp/deploy-hdnd.tar.gz .
+
+      - name: Copy deployment package to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VNPT_HOST }}
+          username: ${{ secrets.VNPT_USER }}
+          password: ${{ secrets.VNPT_PASS }}
+          source: "deploy-hdnd.tar.gz"
+          target: "/root/"
+
+      - name: Execute deployment script on server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VNPT_HOST }}
+          username: ${{ secrets.VNPT_USER }}
+          password: ${{ secrets.VNPT_PASS }}
+          script: |
+            mkdir -p /root/lichcongtachdnd
+            cd /root/lichcongtachdnd
+            tar -xzf /root/deploy-hdnd.tar.gz
+            docker compose -p lichcongtachdnd up -d --build
+            docker image prune -f || true
+            rm -f /root/deploy-hdnd.tar.gz

@@ -1,3 +1,9 @@
+### [2026-09-04 10:22] Thêm GitHub Action tự động deploy nhánh hdnd
+- **Mô tả**: Tạo luồng CI/CD riêng để tự động deploy code từ nhánh `hdnd` lên thư mục `/root/lichcongtachdnd` trên server VNPT mỗi khi có thay đổi được đẩy lên nhánh này. Điều này giúp chạy song song với hệ thống Văn phòng mà không ghi đè mã nguồn.
+- **Tệp thay đổi**:
+  - `.github/workflows/deploy-hdnd.yml` (Mới)
+- **Lệnh git commit**: `git commit -m "chore(infra): thêm action deploy tự động cho nhánh hdnd"`
+
 ### [2026-09-04 10:09] Đổi tên hiển thị từ "Văn phòng phường Cẩm Phả" thành "HĐND phường Cẩm Phả"
 - **Mô tả**: Thay đổi toàn bộ nhãn hiển thị, tiêu đề trình duyệt, thông tin bản quyền và cấu hình PWA (manifest) từ "Văn phòng phường Cẩm Phả" thành "HĐND phường Cẩm Phả" trên toàn hệ thống frontend theo yêu cầu.
 - **Tệp thay đổi**:
