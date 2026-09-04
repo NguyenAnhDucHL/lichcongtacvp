@@ -1,3 +1,15 @@
+### [2026-09-04 10:09] Đổi tên hiển thị từ "Văn phòng phường Cẩm Phả" thành "HĐND phường Cẩm Phả"
+- **Mô tả**: Thay đổi toàn bộ nhãn hiển thị, tiêu đề trình duyệt, thông tin bản quyền và cấu hình PWA (manifest) từ "Văn phòng phường Cẩm Phả" thành "HĐND phường Cẩm Phả" trên toàn hệ thống frontend theo yêu cầu.
+- **Tệp thay đổi**:
+  - `LichCongTacVanPhong.Api/ClientApp/src/shared/components/PublicLayout.jsx` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/src/components/AdminHeader.jsx` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/src/pages/AdminLogin.jsx` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/index.html` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/wwwroot/index.html` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/wwwroot/manifest.json` (Sửa đổi)
+  - `LichCongTacVanPhong.Api/ClientApp/public/manifest.json` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "style: đổi tên hiển thị Văn phòng thành HĐND"`
+
 ### [2026-08-26 12:15] Kích hoạt WAL mode và hoàn tất kiểm tra connection pooling
 - **Mô tả**: Theo yêu cầu, kiểm tra toàn bộ source code để đảm bảo Pooling=True đã được bật đồng bộ trên mọi Repositories (đã sửa `NotificationRepository.cs`). Đồng thời, thay đổi `PRAGMA journal_mode=DELETE` thành `WAL` trong `DatabaseService.cs` để tối đa hóa hiệu năng truy cập đồng thời của SQLite.
 - **Tệp thay đổi**:

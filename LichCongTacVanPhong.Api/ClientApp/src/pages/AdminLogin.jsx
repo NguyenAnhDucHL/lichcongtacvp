@@ -135,7 +135,7 @@ export default function AdminLogin() {
               className="inline-flex items-center justify-center gap-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
             >
               <ArrowLeft size={16} />
-              Quay về xem Lịch công tác văn phòng
+              Quay về xem Lịch công tác HĐND
             </Link>
           </div>
         </form>
@@ -144,7 +144,7 @@ export default function AdminLogin() {
       {/* Footer */}
       <div className="absolute bottom-0 w-full z-20">
         <footer className="bg-[#4caf50] text-white text-center py-2 text-xs">
-          Bản quyền thuộc về Văn phòng phường Cẩm Phả
+          Bản quyền thuộc về HĐND phường Cẩm Phả
         </footer>
       </div>
     </div>

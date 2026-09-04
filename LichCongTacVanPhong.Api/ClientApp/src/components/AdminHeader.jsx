@@ -44,7 +44,7 @@ export default function AdminHeader() {
         { label: 'Quản trị nhân viên', href: '/campha/manager/employees' },
       ],
     },
-    { label: 'LỊCH CÔNG TÁC VĂN PHÒNG', href: '/campha/' },
+    { label: 'LỊCH CÔNG TÁC HĐND', href: '/campha/' },
     { label: 'QUẢN TRỊ LỊCH', href: '/campha/manager/schedules' },
     { label: 'THÔNG BÁO', href: '/campha/manager/notifications' },
     { label: 'NGÀY LỄ', href: '/campha/manager/holidays' },
@@ -75,7 +75,7 @@ export default function AdminHeader() {
             LỊCH CÔNG TÁC
           </h1>
           <h1 className="text-[13px] sm:text-[15px] md:text-[18px] font-bold text-[#c8102e] uppercase m-0 leading-tight mt-1">
-            VĂN PHÒNG PHƯỜNG CẨM PHẢ
+            HĐND PHƯỜNG CẨM PHẢ
           </h1>
         </div>
       </div>
