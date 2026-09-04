@@ -41,11 +41,26 @@ jobs:
             docker image prune -f || true
             rm -f /root/deploy-hdnd.tar.gz
             
-            # Cấu hình Nginx tự động cho Subdomain HĐND
+            # Cấu hình Nginx tự động cho Subdomain HĐND (Hỗ trợ SSL)
             cat << 'EOF' > /etc/nginx/conf.d/lichcongtachdnd.conf
             server {
                 listen 80;
                 server_name lichcongtachdnd.vpdtcampha.vn;
+                # Tự động chuyển hướng HTTP sang HTTPS
+                return 301 https://$host$request_uri;
+            }
+
+            server {
+                listen 443 ssl;
+                server_name lichcongtachdnd.vpdtcampha.vn;
+
+                # Đường dẫn tới chứng chỉ SSL (Bạn cần upload 2 file này lên server VNPT)
+                ssl_certificate /etc/nginx/ssl/STAR_vpdtcampha_vn_cert_inter_root.crt;
+                ssl_certificate_key /etc/nginx/ssl/STAR_vpdtcampha_vn_private_key.key;
+
+                # Các cấu hình SSL bảo mật cơ bản
+                ssl_protocols TLSv1.2 TLSv1.3;
+                ssl_ciphers HIGH:!aNULL:!MD5;
 
                 location / {
                     proxy_pass http://127.0.0.1:8082;

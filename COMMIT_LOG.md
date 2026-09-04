@@ -1,3 +1,9 @@
+### [2026-09-04 10:49] Bổ sung cấu hình SSL HTTPS vào Nginx tự động
+- **Mô tả**: Sửa đổi cấu hình Nginx trong luồng CI/CD để lắng nghe port 443 SSL và tự động redirect từ port 80 sang 443 cho Subdomain `lichcongtachdnd.vpdtcampha.vn`.
+- **Tệp thay đổi**:
+  - `.github/workflows/deploy-hdnd.yml` (Sửa đổi)
+- **Lệnh git commit**: `git commit -m "feat(infra): bổ sung cấu hình HTTPS SSL cho subdomain HĐND"`
+
 ### [2026-09-04 10:46] Thêm tự động cấu hình Nginx cho subdomain HĐND
 - **Mô tả**: Bổ sung kịch bản tạo file cấu hình Nginx (`lichcongtachdnd.conf`) và tự động reload Nginx vào luồng CI/CD `deploy-hdnd.yml`. Điều này giúp khắc phục lỗi trỏ nhầm sang port của Hệ thống theo dõi văn bản khi truy cập tên miền `lichcongtachdnd.vpdtcampha.vn`.
 - **Tệp thay đổi**:
